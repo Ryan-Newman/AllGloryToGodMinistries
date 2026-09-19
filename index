@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="All Glory to God Ministries — the good news of salvation through Jesus Christ. Learn the steps to be saved and follow our ministry." />
+    <meta name="theme-color" content="#1b1340" />
+    <title>All Glory to God Ministries</title>
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="All Glory to God Ministries" />
+    <meta property="og:description" content="The good news of salvation through Jesus Christ." />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        /* =========================================================
+           All Glory to God Ministries — styles (inlined)
+           Palette: black & gold (professional)
+           ========================================================= */
+
+        :root {
+            --indigo-900: #050505;
+            --indigo-800: #0b0b0b;
+            --indigo-700: #131313;
+            --purple-600: #1a1712;
+            --gold: #d4af37;
+            --gold-bright: #f3d77c;
+            --gold-deep: #b8922e;
+            --cream: #f5f1e6;
+            --cream-soft: #c7c0ad;
+            --panel: rgba(255, 255, 255, 0.035);
+            --panel-line: rgba(212, 175, 55, 0.28);
+            --ink: #0a0a0a;
+            --shadow: rgba(0, 0, 0, 0.6);
+            --serif-display: "Cinzel", Georgia, serif;
+            --serif-body: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+            --serif-script: "Cormorant Garamond", Georgia, serif;
+            --maxw: 1080px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--serif-body);
+            font-size: 1.18rem;
+            line-height: 1.75;
+            color: var(--cream);
+            background: radial-gradient(circle at 50% -10%, rgba(212, 175, 55, 0.16), transparent 42%), radial-gradient(circle at 85% 110%, rgba(212, 175, 55, 0.08), transparent 45%), linear-gradient(180deg, #000000 0%, var(--indigo-800) 45%, #000000 120%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: min(var(--maxw), 90%);
+            margin: 0 auto;
+        }
+
+        a {
+            color: var(--gold-bright);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+            a:hover {
+                color: var(--cream);
+            }
+
+        /* ---------- Decorative rays ---------- */
+        .rays {
+            position: fixed;
+            inset: -20% 0 auto 0;
+            height: 1000vh;
+            pointer-events: none;
+            z-index: 0;
+            background: conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(246, 221, 154, 0.06) 12deg, transparent 24deg, rgba(246, 221, 154, 0.05) 36deg, transparent 48deg, rgba(246, 221, 154, 0.06) 60deg, transparent 72deg);
+            opacity: 0.9;
+        }
+
+        /* ---------- Header / Nav ---------- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.82);
+            border-bottom: 1px solid var(--panel-line);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: min(var(--maxw), 92%);
+            margin: 0 auto;
+            padding: 0.85rem 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--cream);
+        }
+
+        .brand-cross {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .brand-mark {
+            width: 30px;
+            height: 30px;
+            flex: none;
+        }
+
+        .brand-name {
+            font-family: var(--serif-display);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            font-size: 1.05rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            .nav-links a {
+                font-family: var(--serif-display);
+                font-size: 0.86rem;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: var(--cream-soft);
+            }
+
+                .nav-links a:hover {
+                    color: var(--gold-bright);
+                }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            padding: 6px;
+        }
+
+            .nav-toggle span {
+                width: 26px;
+                height: 2px;
+                background: var(--gold);
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            z-index: 1;
+            min-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5rem 1.5rem 3rem;
+        }
+
+        .hero-inner {
+            max-width: 760px;
+        }
+
+        .hero-eyebrow {
+            font-family: var(--serif-display);
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-title {
+            font-family: var(--serif-display);
+            font-weight: 700;
+            font-size: clamp(2.6rem, 7vw, 5rem);
+            line-height: 1.05;
+            margin: 0 0 1.5rem;
+            /* Molten-gold shimmer text */
+            background: linear-gradient( 100deg, var(--gold-deep) 18%, var(--gold) 32%, #fff6d8 50%, var(--gold-bright) 60%, var(--gold-deep) 82% );
+            background-size: 220% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 26px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.22));
+            animation: goldShimmer 7s linear infinite, titleWipe 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+        }
+
+        .hero-verse {
+            font-family: var(--serif-script);
+            font-style: italic;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: var(--cream-soft);
+            max-width: 620px;
+            margin: 0 auto 2.4rem;
+        }
+
+        .ref {
+            display: block;
+            font-style: normal;
+            font-size: 0.95rem;
+            color: var(--gold);
+            margin-top: 0.6rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--serif-display);
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.9rem 1.8rem;
+            border-radius: 999px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+            color: var(--indigo-900);
+            box-shadow: 0 8px 26px rgba(232, 200, 122, 0.35);
+        }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                color: var(--indigo-900);
+                box-shadow: 0 12px 34px rgba(232, 200, 122, 0.5);
+            }
+
+        .btn-ghost {
+            border: 1px solid rgba(232, 200, 122, 0.6);
+            color: var(--cream);
+        }
+
+            .btn-ghost:hover {
+                background: rgba(232, 200, 122, 0.12);
+                transform: translateY(-2px);
+                color: var(--cream);
+            }
+
+        .scroll-cue {
+            margin-top: 3rem;
+            font-size: 2rem;
+            color: var(--gold);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        /* Title animations */
+        @keyframes goldShimmer {
+            to {
+                background-position: 220% center;
+            }
+        }
+
+        @keyframes titleWipe {
+            from {
+                clip-path: inset(0 100% 0 0);
+                opacity: 0;
+                transform: translateY(14px);
+            }
+
+            to {
+                clip-path: inset(0 0 0 0);
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ---------- Sections ---------- */
+        .section {
+            position: relative;
+            z-index: 1;
+            padding: 5.5rem 0;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+            .section-head h2 {
+                font-family: var(--serif-display);
+                font-weight: 600;
+                font-size: clamp(1.8rem, 4vw, 2.8rem);
+                margin: 0;
+                text-align: center;
+                /* Gold shimmer text */
+                background: linear-gradient( 100deg, var(--gold-deep) 20%, var(--gold) 38%, #fff6d8 50%, var(--gold-bright) 62%, var(--gold-deep) 80% );
+                background-size: 220% auto;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                -webkit-text-fill-color: transparent;
+                animation: goldShimmer 7s linear infinite;
+                /* Entrance state (revealed when .section-head gets .in) */
+                clip-path: inset(0 100% 0 0);
+                opacity: 0;
+                transition: clip-path 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.9s ease;
+            }
+
+            .section-head.in h2 {
+                clip-path: inset(0 0 0 0);
+                opacity: 1;
+            }
+
+        .ornament {
+            color: var(--gold);
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.9s ease;
+        }
+
+        .section-head .ornament:first-child {
+            transform: translateX(34px) scale(0.4);
+        }
+
+        .section-head .ornament:last-child {
+            transform: translateX(-34px) scale(0.4);
+        }
+
+        .section-head.in .ornament {
+            opacity: 0.85;
+            transform: translateX(0) scale(1);
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--cream-soft);
+            font-style: italic;
+            font-size: 1.15rem;
+            max-width: 640px;
+            margin: 0.4rem auto 3rem;
+        }
+
+        /* ---------- Message / Scripture card ---------- */
+        .scripture-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, rgba(247, 241, 227, 0.07), rgba(247, 241, 227, 0.03));
+            border: 1px solid rgba(232, 200, 122, 0.28);
+            border-radius: 18px;
+            padding: 3rem clamp(1.5rem, 5vw, 3.5rem);
+            box-shadow: 0 20px 60px var(--shadow);
+            position: relative;
+        }
+
+            .scripture-card::before,
+            .scripture-card::after {
+                content: "✦";
+                position: absolute;
+                color: var(--gold);
+                opacity: 0.5;
+                font-size: 1.1rem;
+            }
+
+            .scripture-card::before {
+                top: 1rem;
+                left: 1.2rem;
+            }
+
+            .scripture-card::after {
+                bottom: 1rem;
+                right: 1.2rem;
+            }
+
+            .scripture-card p {
+                margin: 0 0 1.4rem;
+            }
+
+            .scripture-card .lead {
+                font-size: 1.25rem;
+            }
+
+            .scripture-card strong {
+                color: var(--gold-bright);
+                font-weight: 600;
+            }
+
+        .dropcap {
+            float: left;
+            font-family: var(--serif-display);
+            font-size: 4.2rem;
+            line-height: 0.8;
+            padding: 0.3rem 0.6rem 0 0;
+            color: var(--gold);
+        }
+
+        .closing-line {
+            text-align: center;
+            font-family: var(--serif-script);
+            font-style: italic;
+            font-size: 1.35rem;
+            color: var(--gold-bright);
+            border-top: 1px solid rgba(232, 200, 122, 0.25);
+            padding-top: 1.6rem;
+            margin-top: 2rem !important;
+        }
+
+        /* ---------- Steps ---------- */
+        .steps {
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 920px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.4rem;
+        }
+
+        .step {
+            position: relative;
+            background: var(--panel);
+            border: 1px solid var(--panel-line);
+            border-radius: 16px;
+            padding: 2.4rem 1.6rem 1.8rem;
+            text-align: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+            .step:hover {
+                transform: translateY(-6px);
+                border-color: var(--gold);
+                box-shadow: 0 16px 40px var(--shadow);
+            }
+
+        .step-num {
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            font-family: var(--serif-display);
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--indigo-900);
+            background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+            border-radius: 50%;
+            box-shadow: 0 6px 18px rgba(232, 200, 122, 0.4);
+        }
+
+        .step h3 {
+            font-family: var(--serif-display);
+            font-size: 1.3rem;
+            margin: 0.4rem 0 0.7rem;
+            color: var(--gold-bright);
+        }
+
+        .step p {
+            font-size: 1.05rem;
+            margin: 0 0 1rem;
+            color: var(--cream-soft);
+        }
+
+        .step-ref {
+            font-family: var(--serif-display);
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* ---------- Prayer ---------- */
+        .prayer {
+            max-width: 760px;
+            margin: 3.5rem auto 0;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(232, 200, 122, 0.12), rgba(232, 200, 122, 0.04));
+            border: 1px solid rgba(232, 200, 122, 0.35);
+            border-radius: 18px;
+            padding: 2.6rem clamp(1.5rem, 5vw, 3rem);
+        }
+
+            .prayer h3 {
+                font-family: var(--serif-display);
+                font-size: 1.5rem;
+                color: var(--gold-bright);
+                margin: 0 0 1.2rem;
+            }
+
+        .prayer-text {
+            font-family: var(--serif-script);
+            font-style: italic;
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: var(--cream);
+        }
+
+        .prayer-note {
+            font-size: 1.02rem;
+            color: var(--cream-soft);
+            margin-top: 1.4rem;
+        }
+
+        /* ---------- What We Believe ---------- */
+        .belief-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.4rem;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .belief-card {
+            background: var(--panel);
+            border: 1px solid var(--panel-line);
+            border-left: 3px solid var(--gold);
+            border-radius: 14px;
+            padding: 1.8rem 1.6rem 1.5rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+            .belief-card:hover {
+                transform: translateY(-4px);
+                border-color: var(--gold);
+                box-shadow: 0 14px 36px var(--shadow);
+            }
+
+            .belief-card h3 {
+                font-family: var(--serif-display);
+                font-size: 1.22rem;
+                color: var(--gold-bright);
+                margin: 0 0 0.7rem;
+                line-height: 1.3;
+            }
+
+            .belief-card p {
+                font-size: 1.05rem;
+                color: var(--cream-soft);
+                margin: 0 0 1rem;
+            }
+
+        .belief-ref {
+            display: block;
+            font-family: var(--serif-display);
+            font-size: 0.74rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border-top: 1px solid rgba(232, 200, 122, 0.18);
+            padding-top: 0.8rem;
+        }
+
+        /* ---------- Connect / Social ---------- */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.2rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .social-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.8rem 1rem;
+            border-radius: 16px;
+            background: var(--panel);
+            border: 1px solid var(--panel-line);
+            color: var(--cream);
+            font-family: var(--serif-display);
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+
+            .social-card svg {
+                width: 38px;
+                height: 38px;
+                fill: var(--gold);
+                transition: fill 0.25s ease, transform 0.25s ease;
+            }
+
+            .social-card:hover {
+                transform: translateY(-6px);
+                color: var(--cream);
+                border-color: var(--gold);
+                box-shadow: 0 16px 36px var(--shadow);
+            }
+
+                .social-card:hover svg {
+                    transform: scale(1.1);
+                }
+
+            .social-card.yt:hover {
+                background: rgba(255, 0, 0, 0.18);
+            }
+
+                .social-card.yt:hover svg {
+                    fill: #ff4d4d;
+                }
+
+            .social-card.fb:hover {
+                background: rgba(24, 119, 242, 0.18);
+            }
+
+                .social-card.fb:hover svg {
+                    fill: #4d94ff;
+                }
+
+            .social-card.tt:hover {
+                background: rgba(0, 0, 0, 0.35);
+            }
+
+                .social-card.tt:hover svg {
+                    fill: #69f0e0;
+                }
+
+            .social-card.ig:hover {
+                background: rgba(221, 42, 123, 0.18);
+            }
+
+                .social-card.ig:hover svg {
+                    fill: #ff79c0;
+                }
+
+            .social-card.x:hover {
+                background: rgba(0, 0, 0, 0.35);
+            }
+
+                .social-card.x:hover svg {
+                    fill: #ffffff;
+                }
+
+        /* ---------- Support / Give ---------- */
+        .support {
+            max-width: 640px;
+            margin: 3.5rem auto 0;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.03));
+            border: 1px solid var(--panel-line);
+            border-radius: 18px;
+            padding: 2.4rem clamp(1.5rem, 5vw, 2.8rem);
+        }
+
+            .support h3 {
+                font-family: var(--serif-display);
+                font-size: 1.45rem;
+                color: var(--gold-bright);
+                margin: 0 0 0.7rem;
+            }
+
+            .support > p {
+                color: var(--cream-soft);
+                margin: 0 0 1.6rem;
+            }
+
+        .support-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .give-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--serif-display);
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            padding: 0.8rem 1.6rem;
+            border-radius: 999px;
+            border: 1px solid var(--panel-line);
+            color: var(--cream);
+            background: rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+            .give-btn:hover {
+                transform: translateY(-2px);
+                border-color: var(--gold);
+                color: var(--gold-bright);
+                box-shadow: 0 10px 26px var(--shadow);
+            }
+
+        .give-icon {
+            display: grid;
+            place-items: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-family: var(--serif-display);
+            color: var(--ink);
+            background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+        }
+
+        .give-btn.venmo .give-icon {
+            font-style: italic;
+        }
+
+        .give-verse {
+            font-family: var(--serif-script);
+            font-style: italic;
+            color: var(--gold);
+            margin: 1.6rem 0 0;
+        }
+
+        /* ---------- Discipleship ---------- */
+        .disciple-group {
+            max-width: 1040px;
+            margin: 0 auto 3.2rem;
+        }
+
+        .group-title {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            justify-content: center;
+            font-family: var(--serif-display);
+            font-weight: 600;
+            font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+            color: var(--gold-bright);
+            text-align: center;
+            margin: 0 0 1.6rem;
+            letter-spacing: 0.03em;
+        }
+
+            .group-title::before,
+            .group-title::after {
+                content: "";
+                height: 1px;
+                flex: 1 1 0;
+                max-width: 90px;
+                background: linear-gradient(90deg, transparent, var(--panel-line), transparent);
+            }
+
+        .disciple-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.4rem;
+        }
+
+        .disciple-card {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 290px;
+            max-width: 340px;
+            background: var(--panel);
+            border: 1px solid var(--panel-line);
+            border-top: 3px solid var(--gold);
+            border-radius: 14px;
+            padding: 1.8rem 1.6rem 1.5rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+            .disciple-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--gold);
+                box-shadow: 0 16px 40px var(--shadow);
+            }
+
+        .disciple-logo {
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 72px;
+            height: 72px;
+            margin-bottom: 1.1rem;
+            border-radius: 16px;
+            background: var(--cream);
+            border: 1px solid var(--panel-line);
+            box-shadow: 0 6px 18px var(--shadow);
+            overflow: hidden;
+            font-family: var(--serif-display);
+            font-weight: 700;
+            font-size: 1.7rem;
+            letter-spacing: 0.02em;
+            color: var(--ink);
+        }
+
+            .disciple-logo::before {
+                content: attr(data-mono);
+                position: absolute;
+                z-index: 0;
+            }
+
+            .disciple-logo img {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                padding: 12px;
+                background: var(--cream);
+            }
+            /* Monogram badges (for sites without a usable favicon) */
+            .disciple-logo.mono {
+                background: linear-gradient(135deg, var(--gold-deep), var(--gold), var(--gold-bright));
+                color: var(--ink);
+                border-color: transparent;
+            }
+            /* Wide banner logo (for horizontal/header-style logos) */
+            .disciple-logo.wide {
+                width: 100%;
+                max-width: 215px;
+                height: 62px;
+            }
+
+                .disciple-logo.wide img {
+                    padding: 8px 12px;
+                }
+
+        .disciple-card h3 {
+            font-family: var(--serif-display);
+            font-size: 1.2rem;
+            color: var(--gold-bright);
+            margin: 0 0 0.2rem;
+            line-height: 1.3;
+        }
+
+        .disciple-tag {
+            font-family: var(--serif-display);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin: 0 0 0.9rem;
+        }
+
+        .disciple-card > p:not(.disciple-tag) {
+            font-size: 1rem;
+            color: var(--cream-soft);
+            margin: 0 0 1.3rem;
+            flex-grow: 1;
+        }
+
+        .disciple-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+            .disciple-links a {
+                font-family: var(--serif-display);
+                font-size: 0.78rem;
+                letter-spacing: 0.04em;
+                padding: 0.45rem 0.95rem;
+                border-radius: 999px;
+                border: 1px solid var(--panel-line);
+                color: var(--cream);
+                transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            }
+
+                .disciple-links a:hover {
+                    transform: translateY(-2px);
+                    border-color: var(--gold);
+                    color: var(--gold-bright);
+                }
+
+                .disciple-links a.give {
+                    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+                    color: var(--ink);
+                    border-color: transparent;
+                    font-weight: 600;
+                }
+
+                    .disciple-links a.give:hover {
+                        color: var(--ink);
+                        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
+                    }
+
+        .disciple-note {
+            max-width: 720px;
+            margin: 3rem auto 0;
+            text-align: center;
+            font-size: 0.92rem;
+            font-style: italic;
+            color: rgba(199, 192, 173, 0.75);
+        }
+
+            .disciple-note .ref {
+                display: inline;
+                margin-left: 0.3rem;
+            }
+
+        /* ---------- Footer ---------- */
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 3.5rem 1.5rem 2.5rem;
+            border-top: 1px solid var(--panel-line);
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .footer-cross {
+            color: var(--gold);
+            font-size: 2rem;
+            margin: 0 0 0.5rem;
+        }
+
+        .footer-mark {
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 0.6rem;
+            display: block;
+        }
+
+        .footer-name {
+            font-family: var(--serif-display);
+            font-size: 1.3rem;
+            letter-spacing: 0.05em;
+            color: var(--cream);
+            margin: 0 0 0.8rem;
+        }
+
+        .footer-verse {
+            font-family: var(--serif-script);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--cream-soft);
+            margin: 0 0 1.4rem;
+        }
+
+        .footer-copy {
+            font-size: 0.85rem;
+            color: rgba(247, 241, 227, 0.6);
+            margin: 0;
+        }
+
+        /* ---------- Reveal animation ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 760px) {
+            body {
+                font-size: 1.1rem;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                flex-direction: column;
+                gap: 0;
+                background: rgba(0, 0, 0, 0.97);
+                border-bottom: 1px solid var(--panel-line);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+                .nav-links.open {
+                    max-height: 320px;
+                }
+
+                .nav-links li {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .nav-links a {
+                    display: block;
+                    padding: 1rem;
+                    border-top: 1px solid rgba(232, 200, 122, 0.12);
+                }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                scroll-behavior: auto;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+            .section-head h2 {
+                opacity: 1;
+                clip-path: none;
+            }
+
+            .ornament {
+                opacity: 0.85 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0b'/%3E%3Crect x='14.5' y='5' width='3' height='22' rx='1' fill='%23f3d77c'/%3E%3Crect x='9' y='12' width='14' height='3' rx='1' fill='%23f3d77c'/%3E%3C/svg%3E" />
+</head>
+<body>
+    <!-- Decorative light rays -->
+    <div class="rays" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="nav">
+            <a href="#top" class="brand">
+                <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+                    <g transform="translate(20,18)" fill="#b8922e">
+
+                        <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(0)" />
+                        <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(30)" />
+                        <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(60)" />
+                        <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(90)" />
+                        <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(120)" />
+                        <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(150)" />
+                        <polygon points="-1.4,-9 1.4,-9 0,-17" transform="rotate(180)" />
+                        <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(210)" />
+                        <polygon points="-1.4,-9 1.4,-9 0,-17" transform="rotate(240)" />
+                        <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(270)" />
+                        <polygon points="-1.4,-9 1.4,-9 0,-17" transform="rotate(300)" />
+                    </g>
+                    <rect x="17.5" y="6" width="5" height="24" rx="1.5" fill="#f3d77c" />
+                    <rect x="11" y="14" width="18" height="5" rx="1.5" fill="#f3d77c" />
+                </svg>
+                <span class="brand-name">All Glory to God Ministries</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#message">The Message</a></li>
+                <li><a href="#salvation">Steps to Salvation</a></li>
+                <li><a href="#beliefs">What We Believe</a></li>
+                <li><a href="#discipleship">Discipleship</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="top" class="hero">
+        <div class="hero-inner">
+            <p class="hero-eyebrow"> To God Alone Be the Glory</p>
+            <h1 class="hero-title">All Glory to God<br />Ministries</h1>
+            <p class="hero-verse">
+                &ldquo;For God so loved the world, that he gave his only begotten Son, that
+                whosoever believeth in him should not perish, but have everlasting life.&rdquo;
+                <span class="ref">— John 3:16</span>
+            </p>
+            <div class="hero-actions">
+                <a href="#salvation" class="btn btn-primary">How to Be Saved</a>
+                <a href="#message" class="btn btn-ghost">Read the Good News</a>
+            </div>
+        </div>
+        <div class="scroll-cue" aria-hidden="true">⌄</div>
+    </section>
+
+    <!-- The Main Message -->
+    <section id="message" class="message section">
+        <div class="container">
+            <div class="section-head">
+                <span class="ornament">✦</span>
+                <h2>The Good News</h2>
+                <span class="ornament">✦</span>
+            </div>
+
+            <div class="scripture-card reveal">
+                <p class="lead">
+                    <span class="dropcap">G</span>od created man: Adam (the first man) and his wife Eve
+                    (the first woman). Adam and Eve sinned in the Garden of Eden after listening to the
+                    serpent; he convinced them to eat the forbidden fruit of the knowledge of good and evil.
+                </p>
+                <p>
+                    After that sin, man was separated from God. We all inherit this sinful nature from Adam
+                    and Eve, which creates a separation from God who is Holy. This separation puts us in hell
+                    when we die&mdash;but God did not want that, because He loves us. So He sent His only Son,
+                    <strong>Jesus Christ</strong>, to live a life of no sin and die on the cross as a sacrifice
+                    for our sins.
+                </p>
+                <p>
+                    Jesus was raised from the dead after three days and is alive forevermore. We can now choose
+                    Jesus as our Lord and Savior and have a relationship with Father God. The only way to get
+                    saved is by the blood of Jesus&mdash;accepting the sacrifice He made for us, repenting, and
+                    giving our life to Him.
+                </p>
+                <p class="closing-line">For by grace are ye saved through faith. <span class="ref">— Ephesians 2:8</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps to Salvation -->
+    <section id="salvation" class="salvation section">
+        <div class="container">
+            <div class="section-head">
+                <span class="ornament">✦</span>
+                <h2>Steps to Salvation</h2>
+                <span class="ornament">✦</span>
+            </div>
+            <p class="section-sub">The way to a new life in Christ — wherever you are, you can come to Him today.</p>
+
+            <ol class="steps">
+                <li class="step reveal">
+                    <span class="step-num">1</span>
+                    <h3>Believe</h3>
+                    <p>Believe that Jesus Christ is the Son of God, that He died for your sins and God raised him from the dead on the third day, confess "Jesus is Lord", and allow him to be Lord of your life.</p>
+                    <span class="step-ref">Romans 10:9</span>
+                </li>
+                <li class="step reveal">
+                    <span class="step-num">2</span>
+                    <h3>Repent</h3>
+                    <p>Turn away from sin permanantly, with a sincere heart. Confess your sins to God and turn toward Him. Ask God to help you if you need help repenting.</p>
+                    <span class="step-ref">Acts 3:19</span>
+                </li>
+                <li class="step reveal">
+                    <span class="step-num">3</span>
+                    <h3>Water Baptism</h3>
+                    <p>Get water baptized. "He that believeth and is baptized shall be saved" Mark 16:16 KJV</p>
+                    <span class="step-ref">Mark 16:16, Matthew 28:19, and Acts 2:38</span>
+                </li>
+            </ol>
+
+            <!-- What to do after Salvation -->
+            <section id="aftersalvation" class="salvation section">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="ornament">✦</span>
+                        <h2>What to do After Salvation</h2>
+                        <span class="ornament">✦</span>
+                    </div>
+                    <p class="section-sub">"Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new." 2 Corinthians 5:17</p>
+
+                    <ol class="steps">
+                        <li class="step reveal">
+                            <span class="step-num">1</span>
+                            <h3>Follow the Commands of Lord Jesus</h3>
+                            <p>"Jesus said unto him, Thou Shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind." and "And the second is like unto it, thou shalt love thy neighbor as thyself"</p>
+                            <span class="step-ref">Matthew 22:37,39 KJV</span>
+                        </li>
+                        <li class="step reveal">
+                            <span class="step-num">2</span>
+                            <h3>The Great Commission</h3>
+                            <p>
+                                "And he said unto them, Go ye into all the world, and preach the gospel to every creature. He that believeth and is baptized shall be saved; but he that believeth not shall be damned. And these signs shall follow them that believe; In my name shall they cast out devils; they shall speak with new tongues; They shall take up serpents; and if they drink any deadly thing, it shall not hurt them; they shall lay hands on the sick, and they shall recover."
+                            </p>
+                            <span class="step-ref">Mark 16:16</span>
+                        </li>
+                        <li class="step reveal">
+                            <span class="step-num">3</span>
+                            <h3>Read your Bible</h3>
+                            <p>Read your Bible, if you do not have a physical copy you can download the Holy Bible from YouVersion: <a href="https://apps.apple.com/us/app/bible/id282935706">YouVersion App (Apple)</a> <a href="https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android&hl=en-US&pli=1">YouVersion App (Google Play)</a></p>
+                            <p>"Your word is a lamp unto my feet, And a light unto my path"</p>
+                            <span class="step-ref">Psalm 119:105 KJV</span>
+                        </li>
+                    </ol>
+
+                    <div class="prayer reveal">
+                        <h3>A Prayer of Salvation</h3>
+                        <p class="prayer-text">
+                            &ldquo;Father God, I believe Jesus Christ is Your Son, that He died on the cross for my sins
+                            and rose again. I am a sinner, and I repent and turn from my sin. Jesus, I confess You as my
+                            Lord and Savior. Wash me clean by Your blood and come into my heart. I give my life to You.
+                            Thank You for saving me. In Jesus&rsquo; name, Amen.&rdquo;
+                        </p>
+                        <p class="prayer-note">If you prayed this prayer today, welcome to the family of God. We would love to hear from you — reach out through any of our channels below.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What We Believe / Statement of Faith -->
+            <section id="beliefs" class="beliefs section">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="ornament">✦</span>
+                        <h2>What We Believe</h2>
+                        <span class="ornament">✦</span>
+                    </div>
+                    <p class="section-sub">Our Statement of Faith — the foundation of all we teach and live by.</p>
+
+                    <div class="belief-grid">
+                        <article class="belief-card reveal">
+                            <h3>The Bible (The Holy Scriptures)</h3>
+                            <p>The Bible (Composed of the Old Testament and the New Testament) is the inspired, infallible, and inerrant Word of God — written by men moved by the Holy Spirit — as Christians, we live by these scriptures.</p>
+                            <span class="belief-ref">2 Timothy 3:16-17 · 2 Peter 1:20-21 · Hebrews 4:12</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Triune God</h3>
+                            <p>One true living God, YHWH, the Great I AM, Creator of Heaven and Earth, eternally existing in three co-equal, co-eternal persons: the Father, the Son, and the Holy Spirit.</p>
+                            <span class="belief-ref">Genesis 1:26 · Matthew 28:19 · 2 Corinthians 13:14</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>God the Father</h3>
+                            <p>God the Father is the Creator and Sustainer of all life, who lovingly adopts born again believers as His children.</p>
+                            <span class="belief-ref">Romans 8:15-17 · 1 John 3:1</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Jesus Christ, the Son of God</h3>
+                            <p>Jesus Christ is the eternal Son of God, fully God and fully man, born of a virgin and without sin, who came to redeem creation and reconcile us to the Father.</p>
+                            <span class="belief-ref">Isaiah 7:14 · Matthew 1:18-23 · John 1:1-5 · John 14:6</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Holy Spirit</h3>
+                            <p>The Holy Spirit is the third person of the Godhead — our comforter, counselor, teacher, and helper — who convicts the world of sin and empowers believers to be witnesses of Jesus.</p>
+                            <span class="belief-ref">John 14:16-17, 26 · Acts 1:8 · John 16:7-8</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Blood and Resurrection of Jesus</h3>
+                            <p>Jesus died on the cross, bearing our sin and punishment, was buried, and rose again in victory with the keys of hell and the grave. He ascended to the Father and lives to make intercession for us. Only by His blood are we redeemed.</p>
+                            <span class="belief-ref">Matthew 12:40 · Colossians 1:14 · Hebrews 9:22 · Romans 8:34</span>
+                        </article>
+
+
+                        <article class="belief-card reveal">
+                            <h3>The Gospel and Salvation</h3>
+                            <p>Salvation is the free gift of God, received by grace through wholehearted faith and surrender to the Lordship of Jesus Christ — believing He died for our sins and rose again — accompanied by genuine repentance.</p>
+                            <span class="belief-ref">John 3:16 · Ephesians 2:8-9 · Romans 10:9-10 · Acts 2:38</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Water Baptism</h3>
+                            <p>Water baptism is the outward declaration of dying with Christ and rising with Him in newness of life, uniting the believer with His death, burial, and resurrection.</p>
+                            <span class="belief-ref">Matthew 28:19 · Romans 6:3-11</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Baptism in the Holy Spirit</h3>
+                            <p>The Baptism of the Holy Spirit empowers believers to be witnesses to the nations, and that praying in a heavenly language (known as Tongues) is one evidence of being filled with the Spirit.</p>
+                            <span class="belief-ref">Acts 1:4-8 · Acts 2:1-4</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Communion</h3>
+                            <p>Communion is the sacred participation in the body and blood of Christ, by which we remember His sacrifice and proclaim His death until He comes.</p>
+                            <span class="belief-ref">Luke 22:19-20 · 1 Corinthians 10:16-17</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Gifts and Fruit of the Spirit</h3>
+                            <p>Every believer is given gifts of the Spirit to minister to others and advance the Gospel, and that the true mark of a believer is the fruit of the Spirit reflecting Christ's character.</p>
+                            <span class="belief-ref">1 Corinthians 12:7-11 · Romans 12:6-8 · Galatians 5:22-23</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Sanctification</h3>
+                            <p>Sanctification is the ongoing work of God's grace that teaches us to walk in righteousness and purity, transforming us into the image of Christ.</p>
+                            <span class="belief-ref">Romans 12:1-2 · 1 Thessalonians 5:23 · Hebrews 13:12</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Great Commission</h3>
+                            <p>Every believer is commanded to preach the Gospel, walk in the power of the Spirit, and make disciples of all nations.</p>
+                            <span class="belief-ref">Matthew 28:18-20 · Mark 16:15-18</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Church and Five-Fold Ministry</h3>
+                            <p>The Church is the Body of Christ, the temple of God through the Holy Spirit, and that He gave the five-fold ministry — Apostle, Prophet, Evangelist, Pastor, and Teacher — to equip the saints for the work of ministry.</p>
+                            <span class="belief-ref">Ephesians 1:22-23 · Ephesians 4:11-15</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Love</h3>
+                            <p>Love is necessary and powerful, the two greatest commandments are to love the Lord with ALL our heart, soul, and mind, and to love our neighbor as ourselves.</p>
+                            <span class="belief-ref">Matthew 22:37-40 · 1 John 4:7-8</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Sanctity of Marriage</h3>
+                            <p>The sanctity of marriage is a covenant between one man and one woman, and that we are called to walk in holiness and purity before the Lord.</p>
+                            <span class="belief-ref">Genesis 2:24 · Hebrews 13:4 · 1 Peter 1:15-16</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Hope of Our Salvation: The Rapture</h3>
+                            <p>The rapture (A latin word) or Greek verb is harpazō (ἁρπάζω) is also known as the resurrection of the dead in Christ and their gathering, together with those who are alive, at the coming of the Lord — this is the blessed hope of our salvation.</p>
+                            <span class="belief-ref">1 Thessalonians 4:16-17 · 1 Corinthians 15:51-55</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Final Judgment</h3>
+                            <p>There will be a FINAL judgment in which all will be judged according to their works, and those not found written in the Book of Life will be separated from God forever.</p>
+                            <span class="belief-ref">Matthew 25:46 · Revelation 20:11-15</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>A New Heaven, New Earth, and a New Jerusalem</h3>
+                            <p>The first heaven and the first earth will pass away, and God will create a new heaven, a new earth, and a new Jerusalem where righteousness dwells forever "And God shall wipe away every tear from their eyes."</p>
+                            <span class="belief-ref">2 Peter 3:13 · Revelation 21:1</span>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discipleship Info / Recommended Followings -->
+            <section id="discipleship" class="discipleship section">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="ornament">✦</span>
+                        <h2>Discipleship</h2>
+                        <span class="ornament">✦</span>
+                    </div>
+                    <p class="section-sub">
+                        Grow in the Word and be discipled. Here are ministries and voices we recommend following —
+                        preachers, teachers, evangelists, and revivalists edifying the body of Christ. I recommend looking into LifeTeams to meet a small group of people who go out and are doers of the Word: "But be ye doers of the word, and not hearers only, deceiving your own selves." James 1:22 JKV
+                    </p>
+
+                    <!-- Divine Healing -->
+                    <div class="disciple-group">
+                        <h3 class="group-title">Divine Healing</h3>
+                        <div class="disciple-grid">
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo wide"><img src="https://www.jglm.org/wp-content/uploads/2016/04/jglm_header_16.png" alt="John G. Lake Ministries logo" loading="lazy" onerror="this.parentNode.classList.remove('wide');this.parentNode.classList.add('mono');this.parentNode.setAttribute('data-mono','JG');this.remove()" /></span>
+                                <h3>John G. Lake Ministries</h3>
+                                <p class="disciple-tag">Curry Blake · JGLM</p>
+                                <p>Led by Curry Blake, JGLM trains believers to be doers of the Word — equipping the body of Christ to walk in divine healing and continue the works of Jesus.</p>
+                                <p>Through <strong>LifeTeams</strong>, small, trained groups of believers come together to help one another mature in Christ and fulfill the Great Commission in their local communities.</p>
+                                <div class="disciple-links">
+                                    <a href="https://www.jglm.org/" target="_blank" rel="noopener">Website</a>
+                                    <a href="https://www.jglmglobal.org/" target="_blank" rel="noopener">JGLM Global</a>
+                                    <a href="https://www.youtube.com/user/JohnGLakeMinistries" target="_blank" rel="noopener">YouTube</a>
+                                    <a href="https://www.startlifeteams.com/" target="_blank" rel="noopener">Join LifeTeams</a>
+                                    <a class="give" href="https://www.jglm.org/" target="_blank" rel="noopener">Give</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Dominion & Deliverance -->
+                    <div class="disciple-group">
+                        <h3 class="group-title">Dominion &amp; Deliverance</h3>
+                        <div class="disciple-grid">
+                           <!-- <article class="disciple-card reveal">
+                                <span class="disciple-logo" data-mono="LC"><img src="https://www.google.com/s2/favicons?domain=lionheartchurch.org&amp;sz=128" alt="Lionheart Church logo" loading="lazy" onerror="this.remove()" /></span>
+                                <h3>Lionheart Church</h3>
+                                <p class="disciple-tag">lionheartchurch.org</p>
+                                <p>A church family pursuing revival and discipleship — making disciples, restoring the broken, and equipping believers to live boldly for Jesus and reach their community.</p>
+                                <div class="disciple-links">
+                                    <a href="https://lionheartchurch.org/" target="_blank" rel="noopener">Website</a>
+                                    <a class="give" href="https://pushpay.com/g/lionheartchurch" target="_blank" rel="noopener">Give</a>
+                                </div>
+                            </article>
+-->
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo" data-mono="VS"><img src="https://www.google.com/s2/favicons?domain=pastorvlad.org&amp;sz=128" alt="Vlad Savchuk logo" loading="lazy" onerror="this.remove()" /></span>
+                                <h3>Vlad Savchuk</h3>
+                                <p class="disciple-tag">HungryGen</p>
+                                <p>Lead pastor of HungryGen Church, Vlad Savchuk ministers in healing and deliverance and releases free resources, books, and teaching to equip believers worldwide.</p>
+                                <div class="disciple-links">
+                                    <a href="https://pastorvlad.org/" target="_blank" rel="noopener">Website</a>
+                                    <a href="https://hungrygen.com/" target="_blank" rel="noopener">Church</a>
+                                    <a class="give" href="https://b.pastorvlad.org/donate/" target="_blank" rel="noopener">Give</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Watchman & Prophetic -->
+                    <div class="disciple-group">
+                        <h3 class="group-title">Watchman &amp; Prophetic</h3>
+                        <div class="disciple-grid">
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo" data-mono="BB"><img src="https://www.google.com/s2/favicons?domain=youtube.com&amp;sz=128" alt="Brandon Biggs YouTube logo" loading="lazy" onerror="this.remove()" /></span>
+                                <h3>Brandon Biggs</h3>
+                                <p class="disciple-tag">Last Days · LastDays247</p>
+                                <p>Shares prophetic words, visions, and teaching on prayer and preparing for the days ahead — encouraging believers to draw near to Jesus and seek Him first.</p>
+                                <div class="disciple-links">
+                                    <a href="https://www.youtube.com/&#64lastdays247" target="_blank" rel="noopener">YouTube</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Evangelism -->
+                    <div class="disciple-group">
+                        <h3 class="group-title">Evangelism</h3>
+                        <div class="disciple-grid">
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo"><img src="https://images.squarespace-cdn.com/content/v1/6235fe2e2792092e671692bc/5bd982e6-f337-4731-aa5e-b7b5fde75f8f/rroc+logo-2.png?format=300w" alt="Remnant Revival Outreach Center logo" loading="lazy" onerror="this.parentNode.classList.add('mono');this.parentNode.setAttribute('data-mono','RR');this.remove()" /></span>
+                                <h3>Remnant Revival Outreach Center</h3>
+                                <p class="disciple-tag">RROC · Orlando, FL</p>
+                                <p>A church family and global digital community taking the Gospel to the streets through bold evangelism and Spirit-led ministry, training believers in holiness and the gifts of the Spirit.</p>
+                                <div class="disciple-links">
+                                    <a href="https://www.therrocfamily.org/" target="_blank" rel="noopener">Website</a>
+                                    <a class="give" href="https://therroc.churchcenter.com/giving/to/rrocfamily-org" target="_blank" rel="noopener">Give</a>
+                                    <a href="https://www.youtube.com/@LetsChopItUpRichPodcast" target="_blank" rel="noopener">Let's Chop It Up Rich! Podcast </a>
+                                    <a href="https://www.youtube.com/@RROC-International" target="_blank" rel="noopener">RROC International</a>
+                                </div>
+                            </article>
+
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo" data-mono="NB"><img src="https://www.google.com/s2/favicons?domain=nicholasbowling.com&amp;sz=128" alt="Nicholas Bowling logo" loading="lazy" onerror="this.remove()" /></span>
+                                <h3>Nicholas Bowling</h3>
+                                <p class="disciple-tag">Nicholas Bowling Ministries</p>
+                                <p>An evangelist sharing the love of Jesus through street preaching and bold Gospel teaching across the United States, calling believers to walk as Jesus walked.</p>
+                                <div class="disciple-links">
+                                    <a href="https://www.nicholasbowling.com/" target="_blank" rel="noopener">Website</a>
+                                    <a href="https://www.youtube.com/&#64NicholasBowling" target="_blank" rel="noopener">YouTube</a>
+                                    <a class="give" href="https://www.nicholasbowling.com/waystogive" target="_blank" rel="noopener">Give</a>
+                                </div>
+                            </article>
+
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo" data-mono="BC"><img src="https://www.google.com/s2/favicons?domain=brycecrawford.org&amp;sz=128" alt="Bryce Crawford Podcast logo" loading="lazy" onerror="this.remove()" /></span>
+                                <h3>Bryce Crawford Podcast</h3>
+                                <p class="disciple-tag">Bryce Crawford</p>
+                                <p>A Gen-Z evangelist preaching the Gospel in the streets and online; his podcast tackles the major topics facing Christianity and the culture today.</p>
+                                <div class="disciple-links">
+                                    <a href="https://brycecrawford.org/" target="_blank" rel="noopener">Website</a>
+                                    <a href="https://www.youtube.com/&#64BryceCrawfordPodcast" target="_blank" rel="noopener">YouTube</a>
+                                    <a class="give" href="https://brycecrawford.org/" target="_blank" rel="noopener">Give</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Testimonies, Near-Death Experiences & Podcasts -->
+                    <div class="disciple-group">
+                        <h3 class="group-title">Testimonies, Near-Death Experiences &amp; Podcasts</h3>
+                        <div class="disciple-grid">
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo" data-mono="DL"><img src="https://www.google.com/s2/favicons?domain=kapchatfield.com&amp;sz=128" alt="Directed Life logo" loading="lazy" onerror="this.remove()" /></span>
+                                <h3>Directed Life</h3>
+                                <p class="disciple-tag">Kap Chatfield</p>
+                                <p>A podcast and ministry exploring faith, culture, and calling from a Kingdom perspective — equipping this generation to find, fund, and fulfill their God-given purpose.</p>
+                                <div class="disciple-links">
+                                    <a href="https://www.kapchatfield.com/" target="_blank" rel="noopener">Website</a>
+                                    <a href="https://www.youtube.com/&#64directedlifepodcast" target="_blank" rel="noopener">YouTube</a>
+                                    <a class="give" href="https://www.kapchatfield.com/give" target="_blank" rel="noopener">Give</a>
+                                </div>
+                            </article>
+
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo" data-mono="WT"><img src="https://www.google.com/s2/favicons?domain=youtube.com&amp;sz=128" alt="We Need To Talk YouTube logo" loading="lazy" onerror="this.remove()" /></span>
+                                <h3>We Need To Talk</h3>
+                                <p class="disciple-tag">Podcast</p>
+                                <p>A conversation-driven podcast sharing testimonies and honest talk on faith, life, and relationships — stories that point to the reality and goodness of God.</p>
+                                <div class="disciple-links">
+                                    <a href="https://www.youtube.com/&#64Weneed2talktv" target="_blank" rel="noopener">YouTube</a>
+                                </div>
+                            </article>
+
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo" data-mono="DF"><img src="https://www.google.com/s2/favicons?domain=missiondelafe.org&amp;sz=128" alt="Delafé Testimonies logo" loading="lazy" onerror="this.remove()" /></span>
+                                <h3>Delafé Testimonies</h3>
+                                <p class="disciple-tag">Mission Delafé</p>
+                                <p>A nonprofit on a mission to build the world's largest archive of Jesus testimonies — capturing powerful stories of changed lives until His return.</p>
+                                <div class="disciple-links">
+                                    <a href="https://www.missiondelafe.org/" target="_blank" rel="noopener">Website</a>
+                                    <a href="https://www.youtube.com/channel/UCbgW7Cztc6LDdf3bQPHtM2w" target="_blank" rel="noopener">YouTube</a>
+                                    <a class="give" href="https://www.missiondelafe.org/" target="_blank" rel="noopener">Give</a>
+                                </div>
+                            </article>
+
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo" data-mono="GV"><img src="https://www.google.com/s2/favicons?domain=youtube.com&amp;sz=128" alt="God's Voice Today YouTube logo" loading="lazy" onerror="this.remove()" /></span>
+                                <h3>God's Voice Today</h3>
+                                <p class="disciple-tag">Testimonies &amp; Encounters</p>
+                                <p>Shares firsthand testimonies of near-death experiences and supernatural encounters with God — heaven, hell, and the miraculous — all pointing people to Jesus.</p>
+                                <div class="disciple-links">
+                                    <a href="https://www.youtube.com/channel/UCCWp6bVXgponFJ_3LqEKfdA" target="_blank" rel="noopener">YouTube</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Apologetics -->
+                    <div class="disciple-group">
+                        <h3 class="group-title">Apologetics</h3>
+                        <div class="disciple-grid">
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo" data-mono="GL"><img src="~/GodLogic_ProfilePicture.jpg" alt="GodLogic Apologetics logo" loading="lazy" onerror="this.remove()"></span>
+                                <h3>GodLogic Apologetics</h3>
+                                <p class="disciple-tag">Avery Austin Jr.</p>
+                                <p>Defends the Christian faith through live interfaith dialogue and apologetics — equipping believers to give an answer and sharing the Gospel with skeptics.</p>
+                                <div class="disciple-links">
+                                    <a href="https://godlogicapologetics.com/" target="_blank" rel="noopener">Website</a>
+                                    <a href="https://www.youtube.com/channel/UCfTJJ9hIy6Us3JVJV_4eKzg" target="_blank" rel="noopener">YouTube</a>
+                                    <a class="give" href="https://godlogicapologetics.com/donate-gl" target="_blank" rel="noopener">Give</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <p class="disciple-note">
+                        These ministries are independent of "All Glory to God Ministries"; we share them as encouragement
+                        and are not responsible for their content. Always test what you hear against the Word of God.
+                        <span class="ref">— Acts 17:11</span>
+                    </p>
+                </div>
+            </section>
+
+            
+            <!-- Footer -->
+            <footer class="site-footer">
+                <div class="container footer-inner">
+                    <svg class="footer-mark" viewBox="0 0 40 40" aria-hidden="true">
+                        <g transform="translate(20,18)" fill="#b8922e">
+                            <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(0)" />
+                            <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(30)" />
+                            <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(60)" />
+                            <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(90)" />
+                            <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(120)" />
+                            <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(150)" />
+                            <polygon points="-1.4,-9 1.4,-9 0,-17" transform="rotate(180)" />
+                            <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(210)" />
+                            <polygon points="-1.4,-9 1.4,-9 0,-17" transform="rotate(240)" />
+                            <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(270)" />
+                            <polygon points="-1.4,-9 1.4,-9 0,-17" transform="rotate(300)" />
+                        </g>
+                        <rect x="17.5" y="6" width="5" height="24" rx="1.5" fill="#f3d77c" />
+                        <rect x="11" y="14" width="18" height="5" rx="1.5" fill="#f3d77c" />
+                    </svg>
+                    <p class="footer-name">All Glory to God Ministries</p>
+                    <p class="footer-verse">&ldquo;Whatsoever ye do, do all to the glory of God.&rdquo; — 1 Corinthians 10:31</p>
+                    <p class="footer-copy">&copy; <span id="year"></span> All Glory to God Ministries. To God be the glory.</p>
+                </div>
+            </footer>
+
+            <script>
+        /* All Glory to God Ministries — interactions (inlined) */
+        (function () {
+          "use strict";
+
+          // Current year in footer
+          var yearEl = document.getElementById("year");
+          if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+          // Mobile nav toggle
+          var toggle = document.querySelector(".nav-toggle");
+          var links = document.querySelector(".nav-links");
+          if (toggle && links) {
+            toggle.addEventListener("click", function () {
+              var open = links.classList.toggle("open");
+              toggle.setAttribute("aria-expanded", String(open));
+            });
+            links.addEventListener("click", function (e) {
+              if (e.target.tagName === "A") {
+                links.classList.remove("open");
+                toggle.setAttribute("aria-expanded", "false");
+              }
+            });
+          }
+
+          // Reveal-on-scroll for content blocks (.reveal) and section titles (.section-head)
+          var revealEls = document.querySelectorAll(".reveal");
+          var headEls = document.querySelectorAll(".section-head");
+
+          if ("IntersectionObserver" in window) {
+            var io = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (entry) {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    io.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.15 }
+            );
+            revealEls.forEach(function (el) { io.observe(el); });
+
+            var headIo = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (entry) {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("in");
+                    headIo.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.4 }
+            );
+            headEls.forEach(function (el) { headIo.observe(el); });
+          } else {
+            revealEls.forEach(function (el) { el.classList.add("visible"); });
+            headEls.forEach(function (el) { el.classList.add("in"); });
+          }
+        })();
+            </script>
+</body>
+</html>
