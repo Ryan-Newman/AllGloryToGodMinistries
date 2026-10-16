@@ -41,14 +41,8 @@
             --maxw: 1080px;
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             margin: 0;
             font-family: var(--serif-body);
@@ -59,694 +53,41 @@
             background-attachment: fixed;
             overflow-x: hidden;
         }
-
-        .container {
-            width: min(var(--maxw), 90%);
-            margin: 0 auto;
-        }
-
-        a {
-            color: var(--gold-bright);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-            a:hover {
-                color: var(--cream);
-            }
-
-        /* ---------- Decorative rays ---------- */
-        .rays {
-            position: fixed;
-            inset: -20% 0 auto 0;
-            height: 1000vh;
-            pointer-events: none;
-            z-index: 0;
-            background: conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(246, 221, 154, 0.06) 12deg, transparent 24deg, rgba(246, 221, 154, 0.05) 36deg, transparent 48deg, rgba(246, 221, 154, 0.06) 60deg, transparent 72deg);
-            opacity: 0.9;
-        }
-
-        /* ---------- Header / Nav ---------- */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            backdrop-filter: blur(10px);
-            background: rgba(0, 0, 0, 0.82);
-            border-bottom: 1px solid var(--panel-line);
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: min(var(--maxw), 92%);
-            margin: 0 auto;
-            padding: 0.85rem 0;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            color: var(--cream);
-        }
-
-        .brand-cross {
-            color: var(--gold);
-            font-size: 1.5rem;
-        }
-
-        .brand-mark {
-            width: 30px;
-            height: 30px;
-            flex: none;
-        }
-
-        .brand-name {
-            font-family: var(--serif-display);
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            font-size: 1.05rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.8rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-            .nav-links a {
-                font-family: var(--serif-display);
-                font-size: 0.86rem;
-                letter-spacing: 0.06em;
-                text-transform: uppercase;
-                color: var(--cream-soft);
-            }
-
-                .nav-links a:hover {
-                    color: var(--gold-bright);
-                }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: 0;
-            cursor: pointer;
-            padding: 6px;
-        }
-
-            .nav-toggle span {
-                width: 26px;
-                height: 2px;
-                background: var(--gold);
-                transition: transform 0.3s ease, opacity 0.3s ease;
-            }
-
-        /* ---------- Hero ---------- */
-        .hero {
-            position: relative;
-            z-index: 1;
-            min-height: 92vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 5rem 1.5rem 3rem;
-        }
-
-        .hero-inner {
-            max-width: 760px;
-        }
-
-        .hero-eyebrow {
-            font-family: var(--serif-display);
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            font-size: 0.78rem;
-            color: var(--gold);
-            margin-bottom: 1.2rem;
-        }
-
-        .hero-title {
-            font-family: var(--serif-display);
-            font-weight: 700;
-            font-size: clamp(2.6rem, 7vw, 5rem);
-            line-height: 1.05;
-            margin: 0 0 1.5rem;
-            /* Molten-gold shimmer text */
-            background: linear-gradient( 100deg, var(--gold-deep) 18%, var(--gold) 32%, #fff6d8 50%, var(--gold-bright) 60%, var(--gold-deep) 82% );
-            background-size: 220% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 4px 26px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.22));
-            animation: goldShimmer 7s linear infinite, titleWipe 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-        }
-
-        .hero-verse {
-            font-family: var(--serif-script);
-            font-style: italic;
-            font-size: 1.4rem;
-            line-height: 1.6;
-            color: var(--cream-soft);
-            max-width: 620px;
-            margin: 0 auto 2.4rem;
-        }
-
-        .ref {
-            display: block;
-            font-style: normal;
-            font-size: 0.95rem;
-            color: var(--gold);
-            margin-top: 0.6rem;
-            letter-spacing: 0.05em;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            font-family: var(--serif-display);
-            font-size: 0.9rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 0.9rem 1.8rem;
-            border-radius: 999px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-            color: var(--indigo-900);
-            box-shadow: 0 8px 26px rgba(232, 200, 122, 0.35);
-        }
-
-            .btn-primary:hover {
-                transform: translateY(-2px);
-                color: var(--indigo-900);
-                box-shadow: 0 12px 34px rgba(232, 200, 122, 0.5);
-            }
-
-        .btn-clear {
-            border: 1px solid rgba(232, 200, 122, 0.6);
-            color: var(--cream);
-        }
-
-            .btn-clear:hover {
-                background: rgba(232, 200, 122, 0.12);
-                transform: translateY(-2px);
-                color: var(--cream);
-            }
-
-        .scroll-cue {
-            margin-top: 3rem;
-            font-size: 2rem;
-            color: var(--gold);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(8px);
-            }
-        }
-
-        /* Title animations */
-        @keyframes goldShimmer {
-            to {
-                background-position: 220% center;
-            }
-        }
-
-        @keyframes titleWipe {
-            from {
-                clip-path: inset(0 100% 0 0);
-                opacity: 0;
-                transform: translateY(14px);
-            }
-
-            to {
-                clip-path: inset(0 0 0 0);
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ---------- Sections ---------- */
-        .section {
-            position: relative;
-            z-index: 1;
-            padding: 5.5rem 0;
-        }
-
-        .section-head {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.2rem;
-            margin-bottom: 0.6rem;
-        }
-
-            .section-head h2 {
-                font-family: var(--serif-display);
-                font-weight: 600;
-                font-size: clamp(1.8rem, 4vw, 2.8rem);
-                margin: 0;
-                text-align: center;
-                /* Gold shimmer text */
-                background: linear-gradient( 100deg, var(--gold-deep) 20%, var(--gold) 38%, #fff6d8 50%, var(--gold-bright) 62%, var(--gold-deep) 80% );
-                background-size: 220% auto;
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
-                -webkit-text-fill-color: transparent;
-                animation: goldShimmer 7s linear infinite;
-                /* Entrance state (revealed when .section-head gets .in) */
-                clip-path: inset(0 100% 0 0);
-                opacity: 0;
-                transition: clip-path 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.9s ease;
-            }
-
-            .section-head.in h2 {
-                clip-path: inset(0 0 0 0);
-                opacity: 1;
-            }
-
-        .ornament {
-            color: var(--gold);
-            font-size: 1.1rem;
-            opacity: 0;
-            transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.9s ease;
-        }
-
-        .section-head .ornament:first-child {
-            transform: translateX(34px) scale(0.4);
-        }
-
-        .section-head .ornament:last-child {
-            transform: translateX(-34px) scale(0.4);
-        }
-
-        .section-head.in .ornament {
-            opacity: 0.85;
-            transform: translateX(0) scale(1);
-        }
-
-        .section-sub {
-            text-align: center;
-            color: var(--cream-soft);
-            font-style: italic;
-            font-size: 1.15rem;
-            max-width: 640px;
-            margin: 0.4rem auto 3rem;
-        }
-
-        /* ---------- Message / Scripture card ---------- */
-        .scripture-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: linear-gradient(180deg, rgba(247, 241, 227, 0.07), rgba(247, 241, 227, 0.03));
-            border: 1px solid rgba(232, 200, 122, 0.28);
-            border-radius: 18px;
-            padding: 3rem clamp(1.5rem, 5vw, 3.5rem);
-            box-shadow: 0 20px 60px var(--shadow);
-            position: relative;
-        }
-
-            .scripture-card::before,
-            .scripture-card::after {
-                content: "✦";
-                position: absolute;
-                color: var(--gold);
-                opacity: 0.5;
-                font-size: 1.1rem;
-            }
-
-            .scripture-card::before {
-                top: 1rem;
-                left: 1.2rem;
-            }
-
-            .scripture-card::after {
-                bottom: 1rem;
-                right: 1.2rem;
-            }
-
-            .scripture-card p {
-                margin: 0 0 1.4rem;
-            }
-
-            .scripture-card .lead {
-                font-size: 1.25rem;
-            }
-
-            .scripture-card strong {
-                color: var(--gold-bright);
-                font-weight: 600;
-            }
-
-        .dropcap {
-            float: left;
-            font-family: var(--serif-display);
-            font-size: 4.2rem;
-            line-height: 0.8;
-            padding: 0.3rem 0.6rem 0 0;
-            color: var(--gold);
-        }
-
-        .closing-line {
-            text-align: center;
-            font-family: var(--serif-script);
-            font-style: italic;
-            font-size: 1.35rem;
-            color: var(--gold-bright);
-            border-top: 1px solid rgba(232, 200, 122, 0.25);
-            padding-top: 1.6rem;
-            margin-top: 2rem !important;
-        }
-
-        /* ---------- Steps ---------- */
-        .steps {
-            list-style: none;
-            margin: 0 auto;
-            padding: 0;
-            max-width: 920px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.4rem;
-        }
-
-        .step {
-            position: relative;
-            background: var(--panel);
-            border: 1px solid var(--panel-line);
-            border-radius: 16px;
-            padding: 2.4rem 1.6rem 1.8rem;
-            text-align: center;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-
-            .step:hover {
-                transform: translateY(-6px);
-                border-color: var(--gold);
-                box-shadow: 0 16px 40px var(--shadow);
-            }
-
-        .step-num {
-            position: absolute;
-            top: -22px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 46px;
-            height: 46px;
-            display: grid;
-            place-items: center;
-            font-family: var(--serif-display);
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--indigo-900);
-            background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-            border-radius: 50%;
-            box-shadow: 0 6px 18px rgba(232, 200, 122, 0.4);
-        }
-
-        .step h3 {
-            font-family: var(--serif-display);
-            font-size: 1.3rem;
-            margin: 0.4rem 0 0.7rem;
-            color: var(--gold-bright);
-        }
-
-        .step p {
-            font-size: 1.05rem;
-            margin: 0 0 1rem;
-            color: var(--cream-soft);
-        }
-
-        .step-ref {
-            font-family: var(--serif-display);
-            font-size: 0.78rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--gold);
-        }
-
-        /* ---------- Prayer ---------- */
-        .prayer {
-            max-width: 760px;
-            margin: 3.5rem auto 0;
-            text-align: center;
-            background: linear-gradient(180deg, rgba(232, 200, 122, 0.12), rgba(232, 200, 122, 0.04));
-            border: 1px solid rgba(232, 200, 122, 0.35);
-            border-radius: 18px;
-            padding: 2.6rem clamp(1.5rem, 5vw, 3rem);
-        }
-
-            .prayer h3 {
-                font-family: var(--serif-display);
-                font-size: 1.5rem;
-                color: var(--gold-bright);
-                margin: 0 0 1.2rem;
-            }
-
-        .prayer-text {
-            font-family: var(--serif-script);
-            font-style: italic;
-            font-size: 1.3rem;
-            line-height: 1.7;
-            color: var(--cream);
-        }
-
-        .prayer-note {
-            font-size: 1.02rem;
-            color: var(--cream-soft);
-            margin-top: 1.4rem;
-        }
-
-        /* ---------- What We Believe ---------- */
-        .belief-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.4rem;
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        .belief-card {
-            background: var(--panel);
-            border: 1px solid var(--panel-line);
-            border-left: 3px solid var(--gold);
-            border-radius: 14px;
-            padding: 1.8rem 1.6rem 1.5rem;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-
-            .belief-card:hover {
-                transform: translateY(-4px);
-                border-color: var(--gold);
-                box-shadow: 0 14px 36px var(--shadow);
-            }
-
-            .belief-card h3 {
-                font-family: var(--serif-display);
-                font-size: 1.22rem;
-                color: var(--gold-bright);
-                margin: 0 0 0.7rem;
-                line-height: 1.3;
-            }
-
-            .belief-card p {
-                font-size: 1.05rem;
-                color: var(--cream-soft);
-                margin: 0 0 1rem;
-            }
-
-        .belief-ref {
-            display: block;
-            font-family: var(--serif-display);
-            font-size: 0.74rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--gold);
-            border-top: 1px solid rgba(232, 200, 122, 0.18);
-            padding-top: 0.8rem;
-        }
-
-        /* ---------- Connect / Social ---------- */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.2rem;
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        .social-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1.8rem 1rem;
-            border-radius: 16px;
-            background: var(--panel);
-            border: 1px solid var(--panel-line);
-            color: var(--cream);
-            font-family: var(--serif-display);
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-        }
-
-            .social-card svg {
-                width: 38px;
-                height: 38px;
-                fill: var(--gold);
-                transition: fill 0.25s ease, transform 0.25s ease;
-            }
-
-            .social-card:hover {
-                transform: translateY(-6px);
-                color: var(--cream);
-                border-color: var(--gold);
-                box-shadow: 0 16px 36px var(--shadow);
-            }
-
-                .social-card:hover svg {
-                    transform: scale(1.1);
-                }
-
-            .social-card.yt:hover {
-                background: rgba(255, 0, 0, 0.18);
-            }
-
-                .social-card.yt:hover svg {
-                    fill: #ff4d4d;
-                }
-
-            .social-card.fb:hover {
-                background: rgba(24, 119, 242, 0.18);
-            }
-
-                .social-card.fb:hover svg {
-                    fill: #4d94ff;
-                }
-
-            .social-card.tt:hover {
-                background: rgba(0, 0, 0, 0.35);
-            }
-
-                .social-card.tt:hover svg {
-                    fill: #69f0e0;
-                }
-
-            .social-card.ig:hover {
-                background: rgba(221, 42, 123, 0.18);
-            }
-
-                .social-card.ig:hover svg {
-                    fill: #ff79c0;
-                }
-
-            .social-card.x:hover {
-                background: rgba(0, 0, 0, 0.35);
-            }
-
-                .social-card.x:hover svg {
-                    fill: #ffffff;
-                }
-
-        /* ---------- Support / Give ---------- */
-        .support {
-            max-width: 640px;
-            margin: 3.5rem auto 0;
-            text-align: center;
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.03));
-            border: 1px solid var(--panel-line);
-            border-radius: 18px;
-            padding: 2.4rem clamp(1.5rem, 5vw, 2.8rem);
-        }
-
-            .support h3 {
-                font-family: var(--serif-display);
-                font-size: 1.45rem;
-                color: var(--gold-bright);
-                margin: 0 0 0.7rem;
-            }
-
-            .support > p {
-                color: var(--cream-soft);
-                margin: 0 0 1.6rem;
-            }
-
-        .support-btns {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .give-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-family: var(--serif-display);
-            font-size: 0.95rem;
-            letter-spacing: 0.04em;
-            padding: 0.8rem 1.6rem;
-            border-radius: 999px;
-            border: 1px solid var(--panel-line);
-            color: var(--cream);
-            background: rgba(0, 0, 0, 0.4);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-        }
-
-            .give-btn:hover {
-                transform: translateY(-2px);
-                border-color: var(--gold);
-                color: var(--gold-bright);
-                box-shadow: 0 10px 26px var(--shadow);
-            }
-
-        .give-icon {
-            display: grid;
-            place-items: center;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            font-weight: 700;
-            font-family: var(--serif-display);
-            color: var(--ink);
-            background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-        }
-
-        .give-btn.venmo .give-icon {
-            font-style: italic;
-        }
-
-        .give-verse {
-            font-family: var(--serif-script);
-            font-style: italic;
-            color: var(--gold);
-            margin: 1.6rem 0 0;
-        }
-
-        /* ---------- Discipleship ---------- */
+        .container { width: min(var(--maxw), 90%); margin: 0 auto; }
+        a { color: var(--gold-bright); text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: var(--cream); }
+
+        .rays { position: fixed; inset: -20% 0 auto 0; height: 1000vh; pointer-events: none; z-index: 0; background: conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(246, 221, 154, 0.06) 12deg, transparent 24deg, rgba(246, 221, 154, 0.05) 36deg, transparent 48deg, rgba(246, 221, 154, 0.06) 60deg, transparent 72deg); opacity: 0.9; }
+
+        .site-header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: rgba(0, 0, 0, 0.82); border-bottom: 1px solid var(--panel-line); }
+        .nav { display: flex; align-items: center; justify-content: space-between; width: min(var(--maxw), 92%); margin: 0 auto; padding: 0.85rem 0; }
+        .brand { display: flex; align-items: center; gap: 0.6rem; color: var(--cream); }
+        .brand-mark { width: 30px; height: 30px; flex: none; }
+        .brand-name { font-family: var(--serif-display); font-weight: 600; letter-spacing: 0.04em; font-size: 1.05rem; }
+        .nav-links { display: flex; gap: 1.8rem; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { font-family: var(--serif-display); font-size: 0.86rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cream-soft); }
+        .nav-links a:hover { color: var(--gold-bright); }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 6px; }
+        .nav-toggle span { width: 26px; height: 2px; background: var(--gold); transition: transform 0.3s ease, opacity 0.3s ease; }
+
+        .hero { position: relative; z-index: 1; min-height: 92vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 5rem 1.5rem 3rem; }
+        .hero-inner { max-width: 760px; }
+        .hero-eyebrow { font-family: var(--serif-display); letter-spacing: 0.32em; text-transform: uppercase; font-size: 0.78rem; color: var(--gold); margin-bottom: 1.2rem; }
+        .hero-title { font-family: var(--serif-display); font-weight: 700; font-size: clamp(2.6rem, 7vw, 5rem); line-height: 1.05; margin: 0 0 1.5rem; background: linear-gradient(100deg, var(--gold-deep) 18%, var(--gold) 32%, #fff6d8 50%, var(--gold-bright) 60%, var(--gold-deep) 82%); background-size: 220% auto; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 26px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.22)); animation: goldShimmer 7s linear infinite, titleWipe 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+        .hero-verse { font-family: var(--serif-script); font-style: italic; font-size: 1.4rem; line-height: 1.6; color: var(--cream-soft); max-width: 620px; margin: 0 auto 2.4rem; }
+        .ref { display: block; font-style: normal; font-size: 0.95rem; color: var(--gold); margin-top: 0.6rem; letter-spacing: 0.05em; }
+        .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-block; font-family: var(--serif-display); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.9rem 1.8rem; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
+        .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: var(--indigo-900); box-shadow: 0 8px 26px rgba(232, 200, 122, 0.35); }
+        .btn-primary:hover { transform: translateY(-2px); color: var(--indigo-900); box-shadow: 0 12px 34px rgba(232, 200, 122, 0.5); }
+        .btn-clear { border: 1px solid rgba(232, 200, 122, 0.6); color: var(--cream); }
+        .btn-clear:hover { background: rgba(232, 200, 122, 0.12); transform: translateY(-2px); color: var(--cream); }
+        .scroll-cue { margin-top: 3rem; font-size: 2rem; color: var(--gold); animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+        @keyframes goldShimmer { to { background-position: 220% center; } }
+        @keyframes titleWipe { from { clip-path: inset(0 100% 0 0); opacity: 0; transform: translateY(14px); } to { clip-path: inset(0 0 0 0); opacity: 1; transform: translateY(0); } }
+
+         /* ---------- Discipleship ---------- */
         .disciple-group {
             max-width: 1040px;
             margin: 0 auto 3.2rem;
@@ -925,138 +266,89 @@
                 margin-left: 0.3rem;
             }
 
-        /* ---------- Footer ---------- */
-        .site-footer {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 3.5rem 1.5rem 2.5rem;
-            border-top: 1px solid var(--panel-line);
-            <!-- background: rgba(0, 0, 0, 0.7); -->
-        }
 
-        .footer-cross {
-            color: var(--gold);
-            font-size: 2rem;
-            margin: 0 0 0.5rem;
-        }
+        .section { position: relative; z-index: 1; padding: 5.5rem 0; }
+        .section-head { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-bottom: 0.6rem; }
+        .section-head h2 { font-family: var(--serif-display); font-weight: 600; font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0; text-align: center; background: linear-gradient(100deg, var(--gold-deep) 20%, var(--gold) 38%, #fff6d8 50%, var(--gold-bright) 62%, var(--gold-deep) 80%); background-size: 220% auto; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; animation: goldShimmer 7s linear infinite; clip-path: inset(0 100% 0 0); opacity: 0; transition: clip-path 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.9s ease; }
+        .section-head.in h2 { clip-path: inset(0 0 0 0); opacity: 1; }
+        .ornament { color: var(--gold); font-size: 1.1rem; opacity: 0; transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.9s ease; }
+        .section-head .ornament:first-child { transform: translateX(34px) scale(0.4); }
+        .section-head .ornament:last-child { transform: translateX(-34px) scale(0.4); }
+        .section-head.in .ornament { opacity: 0.85; transform: translateX(0) scale(1); }
+        .section-sub { text-align: center; color: var(--cream-soft); font-style: italic; font-size: 1.15rem; max-width: 640px; margin: 0.4rem auto 3rem; }
 
-        .footer-mark {
-            width: 46px;
-            height: 46px;
-            margin: 0 auto 0.6rem;
-            display: block;
-        }
+        .scripture-card { max-width: 800px; margin: 0 auto; background: linear-gradient(180deg, rgba(247, 241, 227, 0.07), rgba(247, 241, 227, 0.03)); border: 1px solid rgba(232, 200, 122, 0.28); border-radius: 18px; padding: 3rem clamp(1.5rem, 5vw, 3.5rem); box-shadow: 0 20px 60px var(--shadow); position: relative; }
+        .scripture-card::before, .scripture-card::after { content: "✦"; position: absolute; color: var(--gold); opacity: 0.5; font-size: 1.1rem; }
+        .scripture-card::before { top: 1rem; left: 1.2rem; }
+        .scripture-card::after { bottom: 1rem; right: 1.2rem; }
+        .scripture-card p { margin: 0 0 1.4rem; }
+        .scripture-card .lead { font-size: 1.25rem; }
+        .scripture-card strong { color: var(--gold-bright); font-weight: 600; }
+        .dropcap { float: left; font-family: var(--serif-display); font-size: 4.2rem; line-height: 0.8; padding: 0.3rem 0.6rem 0 0; color: var(--gold); }
+        .closing-line { text-align: center; font-family: var(--serif-script); font-style: italic; font-size: 1.35rem; color: var(--gold-bright); border-top: 1px solid rgba(232, 200, 122, 0.25); padding-top: 1.6rem; margin-top: 2rem !important; }
 
-        .footer-name {
-            font-family: var(--serif-display);
-            font-size: 1.3rem;
-            letter-spacing: 0.05em;
-            color: var(--cream);
-            margin: 0 0 0.8rem;
-        }
+        /* Quiz-specific styles matching theme */
+        .quiz-question { margin-bottom: 1.5rem; }
+        .quiz-btn { background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: var(--indigo-900); border: none; padding: 0.7rem 1.6rem; margin: 0.4rem 0.5rem 0.4rem 0; border-radius: 999px; cursor: pointer; font-family: var(--serif-display); font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .quiz-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4); }
+        .status { font-weight: 600; color: var(--gold-bright); margin: 1rem 0; }
+        .source { font-size: 0.9rem; color: var(--cream-soft); margin-top: 0.5rem; font-style: italic; }
+        .hidden { display: none; }
 
-        .footer-verse {
-            font-family: var(--serif-script);
-            font-style: italic;
-            font-size: 1.15rem;
-            color: var(--cream-soft);
-            margin: 0 0 1.4rem;
-        }
+        .steps { list-style: none; margin: 0 auto; padding: 0; max-width: 920px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; }
+        .step { position: relative; background: var(--panel); border: 1px solid var(--panel-line); border-radius: 16px; padding: 2.4rem 1.6rem 1.8rem; text-align: center; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+        .step:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 16px 40px var(--shadow); }
+        .step-num { position: absolute; top: -22px; left: 50%; transform: translateX(-50%); width: 46px; height: 46px; display: grid; place-items: center; font-family: var(--serif-display); font-weight: 700; font-size: 1.2rem; color: var(--indigo-900); background: linear-gradient(135deg, var(--gold), var(--gold-bright)); border-radius: 50%; box-shadow: 0 6px 18px rgba(232, 200, 122, 0.4); }
+        .step h3 { font-family: var(--serif-display); font-size: 1.3rem; margin: 0.4rem 0 0.7rem; color: var(--gold-bright); }
+        .step p { font-size: 1.05rem; margin: 0 0 1rem; color: var(--cream-soft); }
+        .step-ref { font-family: var(--serif-display); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
 
-        .footer-copy {
-            font-size: 0.85rem;
-            color: rgba(247, 241, 227, 0.6);
-            margin: 0;
-        }
+        .prayer { max-width: 760px; margin: 3.5rem auto 0; text-align: center; background: linear-gradient(180deg, rgba(232, 200, 122, 0.12), rgba(232, 200, 122, 0.04)); border: 1px solid rgba(232, 200, 122, 0.35); border-radius: 18px; padding: 2.6rem clamp(1.5rem, 5vw, 3rem); }
+        .prayer h3 { font-family: var(--serif-display); font-size: 1.5rem; color: var(--gold-bright); margin: 0 0 1.2rem; }
+        .prayer-text { font-family: var(--serif-script); font-style: italic; font-size: 1.3rem; line-height: 1.7; color: var(--cream); }
+        .prayer-note { font-size: 1.02rem; color: var(--cream-soft); margin-top: 1.4rem; }
 
-        /* ---------- Reveal animation ---------- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
+        .belief-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.4rem; max-width: 980px; margin: 0 auto; }
+        .belief-card { background: var(--panel); border: 1px solid var(--panel-line); border-left: 3px solid var(--gold); border-radius: 14px; padding: 1.8rem 1.6rem 1.5rem; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+        .belief-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 14px 36px var(--shadow); }
+        .belief-card h3 { font-family: var(--serif-display); font-size: 1.22rem; color: var(--gold-bright); margin: 0 0 0.7rem; line-height: 1.3; }
+        .belief-card p { font-size: 1.05rem; color: var(--cream-soft); margin: 0 0 1rem; }
+        .belief-ref { display: block; font-family: var(--serif-display); font-size: 0.74rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); border-top: 1px solid rgba(232, 200, 122, 0.18); padding-top: 0.8rem; }
 
-            .reveal.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .site-footer { position: relative; z-index: 1; text-align: center; padding: 3.5rem 1.5rem 2.5rem; border-top: 1px solid var(--panel-line); }
+        .footer-mark { width: 46px; height: 46px; margin: 0 auto 0.6rem; display: block; }
+        .footer-name { font-family: var(--serif-display); font-size: 1.3rem; letter-spacing: 0.05em; color: var(--cream); margin: 0 0 0.8rem; }
+        .footer-verse { font-family: var(--serif-script); font-style: italic; font-size: 1.15rem; color: var(--cream-soft); margin: 0 0 1.4rem; }
+        .footer-copy { font-size: 0.85rem; color: rgba(247, 241, 227, 0.6); margin: 0; }
 
-        /* ---------- Responsive ---------- */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
         @media (max-width: 760px) {
-            body {
-                font-size: 1.1rem;
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                right: 0;
-                left: 0;
-                flex-direction: column;
-                gap: 0;
-                background: rgba(0, 0, 0, 0.97);
-                border-bottom: 1px solid var(--panel-line);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-            }
-
-                .nav-links.open {
-                    max-height: 320px;
-                }
-
-                .nav-links li {
-                    width: 100%;
-                    text-align: center;
-                }
-
-                .nav-links a {
-                    display: block;
-                    padding: 1rem;
-                    border-top: 1px solid rgba(232, 200, 122, 0.12);
-                }
+            body { font-size: 1.1rem; }
+            .nav-toggle { display: flex; }
+            .nav-links { position: absolute; top: 100%; right: 0; left: 0; flex-direction: column; gap: 0; background: rgba(0, 0, 0, 0.97); border-bottom: 1px solid var(--panel-line); max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+            .nav-links.open { max-height: 320px; }
+            .nav-links li { width: 100%; text-align: center; }
+            .nav-links a { display: block; padding: 1rem; border-top: 1px solid rgba(232, 200, 122, 0.12); }
         }
-
         @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                scroll-behavior: auto;
-            }
-
-            .reveal {
-                opacity: 1;
-                transform: none;
-            }
-
-            .section-head h2 {
-                opacity: 1;
-                clip-path: none;
-            }
-
-            .ornament {
-                opacity: 0.85 !important;
-                transform: none !important;
-            }
+            * { animation: none !important; scroll-behavior: auto; }
+            .reveal { opacity: 1; transform: none; }
+            .section-head h2 { opacity: 1; clip-path: none; }
+            .ornament { opacity: 0.85 !important; transform: none !important; }
         }
     </style>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0b'/%3E%3Crect x='14.5' y='5' width='3' height='22' rx='1' fill='%23f3d77c'/%3E%3Crect x='9' y='12' width='14' height='3' rx='1' fill='%23f3d77c'/%3E%3C/svg%3E" />
 </head>
 <body>
-    <!-- Decorative light rays -->
     <div class="rays" aria-hidden="true"></div>
 
-    <!-- Navigation -->
     <header class="site-header">
         <nav class="nav">
             <a href="#top" class="brand">
                 <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
                     <g transform="translate(20,18)" fill="#b8922e">
-
                         <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(0)" />
                         <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(30)" />
                         <polygon points="-1.4,-9 1.4,-9 0,-25" transform="rotate(60)" />
@@ -1088,7 +380,6 @@
         </nav>
     </header>
 
-    <!-- Hero -->
     <section id="top" class="hero">
         <div class="hero-inner">
             <p class="hero-eyebrow"> To God Alone Be the Glory</p>
@@ -1109,15 +400,103 @@
         <div class="scroll-cue" aria-hidden="true">⌄</div>
     </section>
 
-    <!-- The Main Message -->
+    <!-- The Main Message — Good Person Test is now interactive -->
     <section id="message" class="message section">
         <div class="container">
+            <div class="section-head">
+                <span class="ornament">✦</span>
+                <h2>Good Person Test</h2>
+                <span class="ornament">✦</span>
+            </div>
+
+            <div class="scripture-card reveal" id="quizContainer">
+    <!-- Q0: Are you a good person? -->
+    <div id="q0" class="quiz-question">
+        <p class="lead"><span class="dropcap">A</span>re you a good person?</p>
+        <button class="quiz-btn" onclick="startQuiz(true)">Yes</button>
+        <button class="quiz-btn" onclick="startQuiz(false)">No</button>
+    </div>
+
+    <!-- Q1: Lie -->
+    <div id="q1" class="quiz-question hidden">
+        <p>Have you ever told a lie?</p>
+        <button class="quiz-btn" onclick="answer('liar', true, 'q1', 'q2')">Yes</button>
+        <button class="quiz-btn" onclick="answer('liar', false, 'q1', 'q2')">No</button>
+    </div>
+
+    <!-- Q2: Steal -->
+    <div id="q2" class="quiz-question hidden">
+        <p>Have you ever stolen anything?</p>
+        <button class="quiz-btn" onclick="answer('thief', true, 'q2', 'q3')">Yes</button>
+        <button class="quiz-btn" onclick="answer('thief', false, 'q2', 'q3')">No</button>
+    </div>
+
+    <!-- Q3: Lust -->
+    <div id="q3" class="quiz-question hidden">
+        <p>Have you ever lusted after someone (even in your mind)?</p>
+        <button class="quiz-btn" onclick="answer('adulterer', true, 'q3', 'q4')">Yes</button>
+        <button class="quiz-btn" onclick="answer('adulterer', false, 'q3', 'q4')">No</button>
+    </div>
+
+    <!-- Q4: Blasphemy -->
+    <div id="q4" class="quiz-question hidden">
+        <p>Have you ever taken the Lord's name in vain (for example, saying “OMG”)?</p>
+        <p class="scripture">Exodus 20:7 — “You shall not take the name of the LORD your God in vain, for the LORD will not leave him unpunished who takes His name in vain.”</p>
+        <button class="quiz-btn" onclick="answer('blasphemer', true, 'q4', 'statusSection')">Yes</button>
+        <button class="quiz-btn" onclick="answer('blasphemer', false, 'q4', 'statusSection')">No</button>
+    </div>
+
+    <!-- Status (only shown if they answered the four questions) -->
+    <div id="statusSection" class="hidden">
+        <p id="statusMessage" class="status"></p>
+        <p class="closing-line">As it is written: “THERE IS NO RIGHTEOUS PERSON, NOT EVEN ONE;” <span class="ref">— Romans 3:10</span></p>
+        <button class="quiz-btn" onclick="nextSection('statusSection', 'deathSection')">Continue</button>
+    </div>
+
+    <!-- Death / Judgment -->
+    <div id="deathSection" class="hidden">
+        <p>Approximately <strong>174,000 people die each day</strong> worldwide.</p>
+        <p class="source">Source: United Nations World Population Prospects 2024 (≈63.6 million deaths projected for 2026).</p>
+        <p>Many of these deaths occur suddenly or unexpectedly.</p>
+        <p>If today was your last day, would you be found innocent or guilty of keeping God’s commandments?</p>
+        <button class="quiz-btn" onclick="judgment('Innocent')">Innocent</button>
+        <button class="quiz-btn" onclick="judgment('Guilty')">Guilty</button>
+        <div id="innocentReminder" class="hidden" style="margin-top:1rem; color:var(--gold-bright);">
+            <p><strong>Reminder:</strong> You previously answered “Yes” to one or more of the questions above. By your own admission you have broken God’s law, which means the verdict is <strong>Guilty</strong>.</p>
+            <button class="quiz-btn" onclick="nextSection('deathSection', 'concernSection')">Continue</button>
+        </div>
+    </div>
+
+    <!-- Concern / Good News -->
+    <div id="concernSection" class="hidden">
+        <p>Does this concern you? If so, I have <strong>GOOD NEWS</strong>! Jesus Christ paid this debt, but you must <strong>CHOOSE</strong> to accept this free gift. The Bible says you are either for or against Jesus; there is no middle ground.</p>
+        <p>Do you want to be for Jesus and accept this gift?</p>
+        <button class="quiz-btn" onclick="response('yes')">Yes, but what do I need to do now?</button>
+        <button class="quiz-btn" onclick="response('no')">No</button>
+    </div>
+
+    <!-- Confirm No -->
+    <div id="confirmNoSection" class="hidden">
+        <p>Are you sure? This could be your last chance since we never know what could happen.</p>
+        <button class="quiz-btn" onclick="response('changed')">I changed my mind, I want Jesus to save me: What do I need to do now?</button>
+        <button class="quiz-btn" onclick="response('sure')">I'm sure</button>
+    </div>
+
+    <!-- Final -->
+    <div id="finalSection" class="hidden">
+        <p>With a repentant heart (meaning you are serious about turning away from sin), say “I repent,” ask Jesus to forgive you of all of your sins, and ask Him to be Lord of your life (which means you fully submit your life to Jesus).</p>
+        <p>If you did not do this in front of anyone, let someone know you just gave your life to Jesus!</p>
+        <p class="scripture">I the Bible, Jesus says: “If anyone is ashamed of Me and My words, the Son of Man will be ashamed of him when He comes in His glory and in the glory of the Father and of the holy angels.” <span class="ref">— Luke 9:26 (BSB)</span></p>
+        <p class="source">Berean Study Bible (BSB Publishing, LLC, 2021), Lk 9:26.</p>
+    </div>
+</div>
+
             <div class="section-head">
                 <span class="ornament">✦</span>
                 <h2>The Gospel (Good News)</h2>
                 <span class="ornament">✦</span>
             </div>
-
+            
             <div class="scripture-card reveal">
                 <p class="lead">
                     <span class="dropcap">G</span>od created man: Adam and then God created his wife Eve.
@@ -1128,24 +507,90 @@
                 <p>
                     Because Adam and Eve sinned, man inherited a sinful nature which separates us from God. 
                     When we die, by default this separation is in hell.
-                    &mdash;but God does not want that! because He loves us. God loves us so much that He sent His only Son,
+                    &mdash;but God does not want that! BECAUSE HE LOVE US: God loves us so much that He sent His only Son,
                     <strong>Jesus Christ</strong>, who lived a life of no sin and died on the cross as a sacrifice
                     for our sins. He did what we could not.
                 </p>
                 <p>
-    <strong>Jesus</strong>
-                     was raised from the dead after three days and is alive forevermore. We can now choose
-<strong>Jesus</strong>
-                     as our Lord and Savior and have a relationship with  
-<strong>Father God</strong>. The only way to get
-                    saved is by the blood of 
-<strong>Jesus</strong>—believing in him, accepting the sacrifice He made for us, repenting, and
+                    <strong>Jesus</strong> was raised from the dead after three days and is alive forevermore. We can now choose
+                    <strong>Jesus</strong> as our Lord and Savior and have a relationship with  
+                    <strong>Father God</strong>. The only way to get saved is by the blood of 
+                    <strong>Jesus</strong>—believing in him, accepting the sacrifice He made for us, repenting, and
                     giving our life to Him.
                 </p>
                 <p class="closing-line">For by grace are ye saved through faith. <span class="ref">— Ephesians 2:8</span></p>
             </div>
         </div>
     </section>
+
+    <!-- Evidence -->
+<section id="salvation" class="salvation section">
+    <div class="container">
+        <div class="section-head">
+            <span class="ornament">✦</span>
+            <h2>Evidence</h2>
+            <span class="ornament">✦</span>
+        </div>
+        <p class="section-sub">How do you know all this is real?</p>
+
+        <ol class="steps">
+            <li class="step reveal">
+                <span class="step-num">1</span>
+                <h3>Shroud of Turin</h3>
+                <p>The Shroud of Turin bears an image that current science cannot fully explain or reproduce. Early carbon dating (1988) placed a sample in the 13th–14th century, but later research indicated the tested corner was likely a medieval repair patch. Multiple studies and historical references support a 1st-century origin consistent with the burial cloth of Jesus (Matthew 27:59).</p>
+                <span class="step-ref">Matthew 27:59 · Shroud of Turin research (multiple peer-reviewed studies)</span>
+            </li>
+            <li class="step reveal">
+                <span class="step-num">2</span>
+                <h3>Tim Tebow “John 3:16” Game</h3>
+                <p>On January 8, 2012, in the NFL playoff game between the Denver Broncos and Pittsburgh Steelers, Tim Tebow’s performance produced multiple statistics containing 3-1-6: 316 passing yards, 31.6 yards per completion (a postseason record), Steelers time of possession of 31:06, CBS ratings peaking at 31.6, and the only interception occurring on a 3rd-and-16 play. These numbers aligning with John 3:16 in a single game is widely noted as statistically remarkable.</p>
+                <span class="step-ref">Pro-Football-Reference.com · ESPN box score · Wikipedia “3:16 game”</span>
+            </li>
+            <li class="step reveal">
+                <span class="step-num">3</span>
+                <h3>Ron Wyatt’s Mount Ararat Samples</h3>
+                <p>Ron Wyatt reported samples from the Durupinar boat-shaped formation on Mount Ararat containing organic carbon, high iron content consistent with metal fittings/rivets, material he identified as laminated or petrified wood, and fibrous material interpreted as animal hair or wool. Metal-detector scans reportedly showed a regular structural pattern. These claims remain highly contested by mainstream geologists, who identify the formation and samples as natural volcanic rock.</p>
+                <span class="step-ref">Wyatt Archaeological Research reports · Critical analysis by Lorence G. Collins (Journal of Geoscience Education)</span>
+            </li>
+            <li class="step reveal">
+                <span class="step-num">4</span>
+                <h3>Sodom & Gomorrah Sulfur Balls</h3>
+                <p>Genesis 19:24 describes the Lord raining burning sulfur on Sodom and Gomorrah. In the southern Dead Sea region near proposed sites Bab edh-Dhra and Numeira, sulfur nodules (often 90–98% pure sulfur) are still found on the ground and in geological layers. These ignitable sulfur balls match the biblical description of brimstone and are unique in their concentration and purity in the area.</p>
+                <span class="step-ref">Genesis 19:24 · Archaeological reports on Bab edh-Dhra / Numeira · Geological observations of sulfur nodules</span>
+            </li>
+            <li class="step reveal">
+                <span class="step-num">5</span>
+                <h3>Lot’s Wife Pillar of Salt</h3>
+                <p>Genesis 19:26 records that Lot’s wife looked back and became a pillar of salt. Near Mount Sodom in the Dead Sea area stands a human-shaped formation composed primarily of NaCl (rock salt). The location and composition align with the biblical account of the event.</p>
+                <span class="step-ref">Genesis 19:26 · Geological identification of the Mount Sodom salt formation</span>
+            </li>
+            <li class="step reveal">
+                <span class="step-num">6</span>
+                <h3>Fulfilled Prophecy: Temple Destruction (70 AD)</h3>
+                <p>Jesus predicted, “Not one stone here will be left on another; every one will be thrown down” (Matthew 24:2; Mark 13:2; Luke 21:6). In 70 AD, Roman forces under Titus destroyed the Second Temple in Jerusalem so thoroughly that the stones were thrown down, fulfilling the prophecy in precise historical detail recorded by Josephus and others.</p>
+                <span class="step-ref">Matthew 24:2 · Mark 13:2 · Luke 21:6 · Josephus, The Jewish War</span>
+            </li>
+            <li class="step reveal">
+                <span class="step-num">7</span>
+                <h3>Fulfilled Prophecy: Israel Reborn in a Day (1948)</h3>
+                <p>Isaiah 66:8 asks, “Shall a nation be born in one day? Shall a land be brought forth in one moment?” On May 14, 1948, the modern State of Israel was declared, recognized within hours by major powers, and established as a nation in a single day—an event without parallel in modern history and widely seen as aligning with the prophetic language of Isaiah.</p>
+                <span class="step-ref">Isaiah 66:8 · Historical record of Israel’s Declaration of Independence, May 14, 1948</span>
+            </li>
+            <li class="step reveal">
+                <span class="step-num">8</span>
+                <h3>Near-Death Experiences (NDEs)</h3>
+                <p>Researchers such as John Burke have documented thousands of NDEs across cultures and religions in which people report meeting Jesus. The Pam Reynolds case (investigated by Dr. Michael Sabom) involved detailed, verifiable observations of surgical events during clinical death with no measurable brain activity. Additional accounts appear on channels such as Vladimir Prokhnevskiy’s YouTube series and related books, consistently pointing to encounters with Jesus.</p>
+                <span class="step-ref">John Burke, Imagine Heaven · Michael Sabom research on Pam Reynolds · Near-death experience literature</span>
+            </li>
+            <li class="step reveal">
+                <span class="step-num">9</span>
+                <h3>Supernatural Evangelism & Gifts of the Spirit</h3>
+                <p>Ongoing reports of healing miracles, creative miracles, and deliverance continue in evangelism settings worldwide. These align with the nine gifts of the Spirit listed in 1 Corinthians 12:8-10 (word of wisdom, word of knowledge, faith, gifts of healing, working of miracles, prophecy, discerning of spirits, different kinds of tongues, and interpretation of tongues), demonstrated in the book of Acts and claimed by many ministries today.</p>
+                <span class="step-ref">1 Corinthians 12:8-10 · Acts of the Apostles · Contemporary ministry reports</span>
+            </li>
+        </ol>
+    </div>
+</section>
 
     <!-- Steps to Salvation -->
     <section id="salvation" class="salvation section">
@@ -1167,7 +612,7 @@
                 <li class="step reveal">
                     <span class="step-num">2</span>
                     <h3>Repent</h3>
-                    <p>Turn away from sin permanantly, with a sincere heart. Confess your sins to God and turn toward Him. Ask God to help you if you need help repenting.</p>
+                    <p>Turn away from sin permanently, with a sincere heart. Confess your sins to God and turn toward Him. Ask God to help you if you need help repenting.</p>
                     <span class="step-ref">Acts 3:19</span>
                 </li>
                 <li class="step reveal">
@@ -1354,6 +799,135 @@
                 </div>
             </section>
 
+            <!-- What We Believe / Statement of Faith -->
+            <section id="beliefs" class="beliefs section">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="ornament">✦</span>
+                        <h2>What We Believe</h2>
+                        <span class="ornament">✦</span>
+                    </div>
+                    <p class="section-sub">Our Statement of Faith — the foundation of all we teach and live by.</p>
+
+                    <div class="belief-grid">
+                        <article class="belief-card reveal">
+                            <h3>The Bible (The Holy Scriptures)</h3>
+                            <p>The Bible (Composed of the Old Testament and the New Testament) is the inspired, infallible, and inerrant Word of God — written by men moved by the Holy Spirit — as Christians, we live by these scriptures.</p>
+                            <span class="belief-ref">2 Timothy 3:16-17 · 2 Peter 1:20-21 · Hebrews 4:12</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Triune God</h3>
+                            <p>One true living God, YHWH, the Great I AM, Creator of Heaven and Earth, eternally existing in three co-equal, co-eternal persons: the Father, the Son, and the Holy Spirit.</p>
+                            <span class="belief-ref">Genesis 1:26 · Matthew 28:19 · 2 Corinthians 13:14</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>God the Father</h3>
+                            <p>God the Father is the Creator and Sustainer of all life, who lovingly adopts born again believers as His children.</p>
+                            <span class="belief-ref">Romans 8:15-17 · 1 John 3:1</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Jesus Christ, the Son of God</h3>
+                            <p>Jesus Christ is the eternal Son of God, fully God and fully man, born of a virgin and without sin, who came to redeem creation and reconcile us to the Father.</p>
+                            <span class="belief-ref">Isaiah 7:14 · Matthew 1:18-23 · John 1:1-5 · John 14:6</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Holy Spirit</h3>
+                            <p>The Holy Spirit is the third person of the Godhead — our comforter, counselor, teacher, and helper — who convicts the world of sin and empowers believers to be witnesses of Jesus.</p>
+                            <span class="belief-ref">John 14:16-17, 26 · Acts 1:8 · John 16:7-8</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Blood and Resurrection of Jesus</h3>
+                            <p>Jesus died on the cross, bearing our sin and punishment, was buried, and rose again in victory with the keys of hell and the grave. He ascended to the Father and lives to make intercession for us. Only by His blood are we redeemed.</p>
+                            <span class="belief-ref">Matthew 12:40 · Colossians 1:14 · Hebrews 9:22 · Romans 8:34</span>
+                        </article>
+
+
+                        <article class="belief-card reveal">
+                            <h3>The Gospel and Salvation</h3>
+                            <p>Salvation is the free gift of God, received by grace through wholehearted faith and surrender to the Lordship of Jesus Christ — believing He died for our sins and rose again — accompanied by genuine repentance.</p>
+                            <span class="belief-ref">John 3:16 · Ephesians 2:8-9 · Romans 10:9-10 · Acts 2:38</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Water Baptism</h3>
+                            <p>Water baptism is the outward declaration of dying with Christ and rising with Him in newness of life, uniting the believer with His death, burial, and resurrection.</p>
+                            <span class="belief-ref">Matthew 28:19 · Romans 6:3-11</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Baptism in the Holy Spirit</h3>
+                            <p>The Baptism of the Holy Spirit empowers believers to be witnesses to the nations, and that praying in a heavenly language (known as Tongues) is one evidence of being filled with the Spirit.</p>
+                            <span class="belief-ref">Acts 1:4-8 · Acts 2:1-4</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Communion</h3>
+                            <p>Communion is the sacred participation in the body and blood of Christ, by which we remember His sacrifice and proclaim His death until He comes.</p>
+                            <span class="belief-ref">Luke 22:19-20 · 1 Corinthians 10:16-17</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Gifts and Fruit of the Spirit</h3>
+                            <p>Every believer is given gifts of the Spirit to minister to others and advance the Gospel, and that the true mark of a believer is the fruit of the Spirit reflecting Christ's character.</p>
+                            <span class="belief-ref">1 Corinthians 12:7-11 · Romans 12:6-8 · Galatians 5:22-23</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Sanctification</h3>
+                            <p>Sanctification is the ongoing work of God's grace that teaches us to walk in righteousness and purity, transforming us into the image of Christ.</p>
+                            <span class="belief-ref">Romans 12:1-2 · 1 Thessalonians 5:23 · Hebrews 13:12</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Great Commission</h3>
+                            <p>Every believer is commanded to preach the Gospel, walk in the power of the Spirit, and make disciples of all nations.</p>
+                            <span class="belief-ref">Matthew 28:18-20 · Mark 16:15-18</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Church and Five-Fold Ministry</h3>
+                            <p>The Church is the Body of Christ, the temple of God through the Holy Spirit, and that He gave the five-fold ministry — Apostle, Prophet, Evangelist, Pastor, and Teacher — to equip the saints for the work of ministry.</p>
+                            <span class="belief-ref">Ephesians 1:22-23 · Ephesians 4:11-15</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>Love</h3>
+                            <p>Love is necessary and powerful, the two greatest commandments are to love the Lord with ALL our heart, soul, and mind, and to love our neighbor as ourselves.</p>
+                            <span class="belief-ref">Matthew 22:37-40 · 1 John 4:7-8</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Sanctity of Marriage</h3>
+                            <p>The sanctity of marriage is a covenant between one man and one woman, and that we are called to walk in holiness and purity before the Lord.</p>
+                            <span class="belief-ref">Genesis 2:24 · Hebrews 13:4 · 1 Peter 1:15-16</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Hope of Our Salvation: The Rapture</h3>
+                            <p>The rapture (A latin word) or Greek verb is harpazō (ἁρπάζω) is also known as the resurrection of the dead in Christ and their gathering, together with those who are alive, at the coming of the Lord — this is the blessed hope of our salvation.</p>
+                            <span class="belief-ref">1 Thessalonians 4:16-17 · 1 Corinthians 15:51-55</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>The Final Judgment</h3>
+                            <p>There will be a FINAL judgment in which all will be judged according to their works, and those not found written in the Book of Life will be separated from God forever.</p>
+                            <span class="belief-ref">Matthew 25:46 · Revelation 20:11-15</span>
+                        </article>
+
+                        <article class="belief-card reveal">
+                            <h3>A New Heaven, New Earth, and a New Jerusalem</h3>
+                            <p>The first heaven and the first earth will pass away, and God will create a new heaven, a new earth, and a new Jerusalem where righteousness dwells forever "And God shall wipe away every tear from their eyes."</p>
+                            <span class="belief-ref">2 Peter 3:13 · Revelation 21:1</span>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
             <!-- Discipleship Info / Recommended Followings -->
             <section id="discipleship" class="discipleship section">
                 <div class="container">
@@ -1383,6 +957,23 @@
                                     <a href="https://www.youtube.com/user/JohnGLakeMinistries" target="_blank" rel="noopener">YouTube</a>
                                     <a href="https://www.startlifeteams.com/" target="_blank" rel="noopener">Join LifeTeams</a>
                                     <a class="give" href="https://www.jglm.org/" target="_blank" rel="noopener">Give</a>
+                                </div>
+                            </article>
+                            <!-- Joel Crumpton !-->
+                            <article class="disciple-card reveal">
+                                <span class="disciple-logo wide"><img src="https://yt3.googleusercontent.com/WHRauFFwNvUpg96XwKcZ0QIvDcErmMJsEDZiJUFXFRBXgPkW585Qe0A2fnu8V5itXHILeLot6A=s160-c-k-c0x00ffffff-no-rj" alt="Joel Crumpton Ministries" loading="lazy" onerror="this.parentNode.classList.remove('wide');this.parentNode.classList.add('mono');this.parentNode.setAttribute('data-mono','JC');this.remove()" /></span>
+                                <h3>Joel Crumpton Ministries</h3>
+                                <p class="disciple-tag">Joel Crumpton</p>
+                                <p>Joel Crumpton has spent decades pursuing one question: Why does the Bible promise power, but most believers never walk in it?
+After more than 25 years of seeing only occasional miracles, everything changed through a revelation from Scripture. What followed was not theory—but real demonstrations of God’s power in everyday life.
+
+People healed in public places. Lives transformed through simple obedience. The Kingdom of God made visible.
+
+This ministry exists to equip believers to do the works of Jesus—not just believe in them.</p>
+                                <div class="disciple-links">
+                                    <a href="https://joelcrumptonministries.org/" target="_blank" rel="noopener">Website</a>
+                                    <a href="https://www.youtube.com/@thatjoelguy1" target="_blank" rel="noopener">YouTube</a>
+                                    <a class="give" href="https://subsplash.com/u/fireinternational/media/d/wt6dbg2-crumpton-joel-and-pat" target="_blank" rel="noopener">Give</a>
                                 </div>
                             </article>
                         </div>
@@ -1591,8 +1182,8 @@
                             </article>
                         </div>
                     </div>
-                            
-    <!--<a class="social-card yt" href="https://www.youtube.com/&#64Brother_Newman" target="_blank" rel="noopener" aria-label="YouTube">
+
+                    <!--<a class="social-card yt" href="https://www.youtube.com/&#64Brother_Newman" target="_blank" rel="noopener" aria-label="YouTube">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" /></svg>
         <span>YouTube</span>
     </a>
@@ -1645,12 +1236,9 @@
         /* All Glory to God Ministries — interactions (inlined) */
         (function () {
           "use strict";
-
-          // Current year in footer
           var yearEl = document.getElementById("year");
           if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-          // Mobile nav toggle
           var toggle = document.querySelector(".nav-toggle");
           var links = document.querySelector(".nav-links");
           if (toggle && links) {
@@ -1666,41 +1254,106 @@
             });
           }
 
-          // Reveal-on-scroll for content blocks (.reveal) and section titles (.section-head)
           var revealEls = document.querySelectorAll(".reveal");
           var headEls = document.querySelectorAll(".section-head");
 
           if ("IntersectionObserver" in window) {
-            var io = new IntersectionObserver(
-              function (entries) {
-                entries.forEach(function (entry) {
-                  if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    io.unobserve(entry.target);
-                  }
-                });
-              },
-              { threshold: 0.15 }
-            );
+            var io = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("visible");
+                  io.unobserve(entry.target);
+                }
+              });
+            }, { threshold: 0.15 });
             revealEls.forEach(function (el) { io.observe(el); });
 
-            var headIo = new IntersectionObserver(
-              function (entries) {
-                entries.forEach(function (entry) {
-                  if (entry.isIntersecting) {
-                    entry.target.classList.add("in");
-                    headIo.unobserve(entry.target);
-                  }
-                });
-              },
-              { threshold: 0.4 }
-            );
+            var headIo = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("in");
+                  headIo.unobserve(entry.target);
+                }
+              });
+            }, { threshold: 0.4 });
             headEls.forEach(function (el) { headIo.observe(el); });
           } else {
             revealEls.forEach(function (el) { el.classList.add("visible"); });
             headEls.forEach(function (el) { el.classList.add("in"); });
           }
         })();
+
+        /* Good Person Test Quiz Logic */
+const answers = { liar: null, thief: null, adulterer: null, blasphemer: null };
+const labels = { liar: 'liar', thief: 'thief', adulterer: 'adulterer', blasphemer: 'blasphemer' };
+
+function startQuiz(isGoodPerson) {
+  document.getElementById('q0').classList.add('hidden');
+  if (isGoodPerson) {
+    // Yes → ask the four questions
+    document.getElementById('q1').classList.remove('hidden');
+  } else {
+    // No → skip straight to death statistics
+    document.getElementById('deathSection').classList.remove('hidden');
+  }
+}
+
+function answer(key, value, currentId, nextId) {
+  answers[key] = value;
+  document.getElementById(currentId).classList.add('hidden');
+  if (nextId === 'statusSection') {
+    showStatus();
+  } else {
+    document.getElementById(nextId).classList.remove('hidden');
+  }
+}
+
+function showStatus() {
+  const admitted = Object.keys(answers).filter(k => answers[k] === true).map(k => labels[k]);
+  let msg = '';
+  if (admitted.length === 0) {
+    msg = 'You claimed to have never done any of these things.';
+  } else if (admitted.length === 1) {
+    msg = `By YOUR own admission, you are a ${admitted[0]}.`;
+  } else {
+    const last = admitted.pop();
+    msg = `By YOUR own admission, you are a ${admitted.join(', ')} and ${last}.`;
+  }
+  document.getElementById('statusMessage').textContent = msg;
+  document.getElementById('statusSection').classList.remove('hidden');
+}
+
+function nextSection(currentId, nextId) {
+  document.getElementById(currentId).classList.add('hidden');
+  document.getElementById(nextId).classList.remove('hidden');
+}
+
+function judgment(choice) {
+  if (choice === 'Innocent') {
+    const hasAdmission = Object.values(answers).some(v => v === true);
+    if (hasAdmission) {
+      document.getElementById('innocentReminder').classList.remove('hidden');
+      document.querySelectorAll('#deathSection > button').forEach(btn => btn.classList.add('hidden'));
+    } else {
+      nextSection('deathSection', 'concernSection');
+    }
+  } else {
+    nextSection('deathSection', 'concernSection');
+  }
+}
+
+function response(choice) {
+  document.getElementById('concernSection').classList.add('hidden');
+  document.getElementById('confirmNoSection').classList.add('hidden');
+  if (choice === 'yes' || choice === 'changed') {
+    document.getElementById('finalSection').classList.remove('hidden');
+  } else if (choice === 'no') {
+    document.getElementById('confirmNoSection').classList.remove('hidden');
+  } else if (choice === 'sure') {
+    document.getElementById('finalSection').innerHTML = '<p>You have chosen not to accept the gift at this time. Remember, your next breath is not guaranteed.</p>';
+    document.getElementById('finalSection').classList.remove('hidden');
+  }
+}
             </script>
 </body>
 </html>
